@@ -22,3 +22,16 @@ add_executable(mt_order_entry examples/mt_order_entry/mt_order_entry_main.cpp ex
 target_link_libraries(mt_order_entry PRIVATE liquibook_simple)
 add_test(NAME upstream_order_entry COMMAND mt_order_entry ${CMAKE_CURRENT_SOURCE_DIR}/examples/mt_order_entry/order_entry.script)
 set_tests_properties(upstream_order_entry PROPERTIES TIMEOUT 10)
+
+# Independent regressions exercise public APIs without the Boost test helpers.
+add_executable(regression_stop_lifecycle test/regression/stop_lifecycle.cpp)
+target_link_libraries(regression_stop_lifecycle PRIVATE liquibook_simple)
+add_executable(regression_trade_price test/regression/trade_price.cpp)
+target_link_libraries(regression_trade_price PRIVATE liquibook_simple)
+add_test(NAME regression_trade_price COMMAND regression_trade_price)
+foreach(action accept cancel trigger)
+  foreach(side buy sell)
+    add_test(NAME regression_stop_${action}_${side}
+      COMMAND regression_stop_lifecycle ${action} ${side})
+  endforeach()
+endforeach()

@@ -1,0 +1,2 @@
+input: market=55, side=sell, quantity=100, limit=market, stop=54
+accepted: matched=0, state=0, stopped=1, filled=0

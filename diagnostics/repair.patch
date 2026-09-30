@@ -1,0 +1,69 @@
+diff --git a/src/simple/simple_order_book.h b/src/simple/simple_order_book.h
+index ddffe16..1eb5e05 100644
+--- a/src/simple/simple_order_book.h
++++ b/src/simple/simple_order_book.h
+@@ -37,6 +37,7 @@ SimpleOrderBook<SIZE>::perform_callback(SimpleCallback& cb)
+   book::DepthOrderBook<SimpleOrder*, SIZE>::perform_callback(cb);
+   switch(cb.type) {
+     case SimpleCallback::cb_order_accept:
++    case SimpleCallback::cb_order_accept_stop:
+       cb.order->accept();
+       break;
+     case SimpleCallback::cb_order_fill: {
+@@ -49,6 +50,7 @@ SimpleOrderBook<SIZE>::perform_callback(SimpleCallback& cb)
+       break;
+     }
+     case SimpleCallback::cb_order_cancel:
++    case SimpleCallback::cb_order_cancel_stop:
+       cb.order->cancel();
+       break;
+     case SimpleCallback::cb_order_replace:
+diff --git a/test/unit/ut_listeners.cpp b/test/unit/ut_listeners.cpp
+index d1c55c2..ff839f7 100644
+--- a/test/unit/ut_listeners.cpp
++++ b/test/unit/ut_listeners.cpp
+@@ -25,19 +25,19 @@ class TradeCbListener : public TradeListener<TypedOrderBook>
+ public:
+   virtual void on_trade(const TypedOrderBook* order_book,
+                         Quantity qty,
+-                        Cost cost)
++                        Price price) override
+   {
+     quantities_.push_back(qty);
+-    costs_.push_back(cost);
++    prices_.push_back(price);
+   }
+ 
+   void reset()
+   {
+     quantities_.clear();
+-    costs_.clear();
++    prices_.clear();
+   }
+   std::vector<Quantity> quantities_;
+-  std::vector<Cost> costs_;
++  std::vector<Price> prices_;
+ };
+ 
+ class OrderCbListener : public OrderListener<OrderPtr>
+@@ -391,9 +391,9 @@ BOOST_AUTO_TEST_CASE(TestTradeCallbacks)
+   // Add matching order, should result in a trade
+   order_book.add(&order1);
+   BOOST_CHECK_EQUAL(1, listener.quantities_.size());
+-  BOOST_CHECK_EQUAL(1, listener.costs_.size());
++  BOOST_CHECK_EQUAL(1, listener.prices_.size());
+   BOOST_CHECK_EQUAL(100, listener.quantities_[0]);
+-  BOOST_CHECK_EQUAL(100 * 3250, listener.costs_[0]);
++  BOOST_CHECK_EQUAL(3250, listener.prices_[0]);
+   listener.reset();
+   // Add invalid order, should be rejected
+   order_book.add(&order2);
+@@ -415,7 +415,7 @@ BOOST_AUTO_TEST_CASE(TestTradeCallbacks)
+   // Add matching order, should be accepted, followed by a fill
+   order_book.add(&order4);
+   BOOST_CHECK_EQUAL(1, listener.quantities_.size());
+-  BOOST_CHECK_EQUAL(1, listener.costs_.size());
++  BOOST_CHECK_EQUAL(1, listener.prices_.size());
+   listener.reset();
+   // Replace matched order, with too large of a size decrease, replace
+   // should be rejected

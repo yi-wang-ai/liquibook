@@ -1,5 +1,7 @@
 # Liquibook reproduction
 
+Status: Phase 1 diagnosis completed. See [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md) for the before/after matrix, fixes, and the upstream disabled-test limitation. The original observations below are preserved as baseline history.
+
 ## Scope
 Upstream: https://github.com/enewhuis/liquibook
 Pinned source commit: 2427613b32f1667abae68a01df6af9ba8270f8e7
@@ -24,7 +26,7 @@ Failing cases:
 
 The trade test expects total cost where the callback interface now specifies fill price. This needs a separate contract review before changing the assertion.
 Stop-order failures involve acceptance and cancellation of held stop orders; root cause and intended lifecycle remain to be investigated.
-The README labels STOP support experimental through the pinned commit message.
+The pinned upstream commit message labels STOP support experimental.
 
 The scripted order-entry CTest passes. The optional QuickFAST market-data publisher/subscriber is outside this first milestone; it is not built or claimed as reproduced.
 

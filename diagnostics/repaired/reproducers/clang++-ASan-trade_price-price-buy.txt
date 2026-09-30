@@ -1,0 +1,2 @@
+input: sell 100 at 3250; buy 800 at 3250
+callback quantity=100, price=3250

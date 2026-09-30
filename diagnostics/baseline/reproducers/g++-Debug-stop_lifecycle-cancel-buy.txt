@@ -1,0 +1,3 @@
+input: market=55, side=buy, quantity=100, limit=market, stop=56
+accepted: matched=0, state=0, stopped=1, filled=0
+cancelled: state=0, stopped=0, filled=0

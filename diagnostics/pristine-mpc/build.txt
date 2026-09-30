@@ -1,0 +1,18 @@
+make: Entering directory '/tmp/liquibook-pristine/test/unit'
+g++  -fPIC -g -D_REENTRANT -I"/tmp/liquibook-pristine/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_listeners.o" ut_listeners.cpp
+ut_listeners.cpp: In member function 'void liquibook::TestOrderCallbacks::test_method()':
+ut_listeners.cpp:109:19: error: cannot declare variable 'listener' to be of abstract type 'liquibook::OrderCbListener'
+  109 |   OrderCbListener listener;
+      |                   ^~~~~~~~
+ut_listeners.cpp:43:7: note:   because the following virtual functions are pure within 'liquibook::OrderCbListener':
+   43 | class OrderCbListener : public OrderListener<OrderPtr>
+      |       ^~~~~~~~~~~~~~~
+In file included from /tmp/liquibook-pristine/src/book/order_book.h:9,
+                 from depth_check.h:6,
+                 from ut_utils.h:6,
+                 from ut_listeners.cpp:8:
+/tmp/liquibook-pristine/src/book/order_listener.h:42:16: note:     'void liquibook::book::OrderListener<OrderPtr>::on_replace(const OrderPtr&, const int64_t&, liquibook::book::Price) [with OrderPtr = liquibook::simple::SimpleOrder*; int64_t = long int; liquibook::book::Price = long unsigned int]'
+   42 |   virtual void on_replace(const OrderPtr& order,
+      |                ^~~~~~~~~~
+make: *** [Makefile.liquibook_unit_test:98: ut_listeners.o] Error 1
+make: Leaving directory '/tmp/liquibook-pristine/test/unit'

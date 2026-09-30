@@ -1,0 +1,16 @@
+Generating 'make' output using liquibook.mwc
+WARNING: Unable to expand MPC_ROOT.
+Skipping depth_feed_publisher (depth_feed_publisher.mpc); it requires QuickFAST.
+Skipping depth_feed_subscriber (depth_feed_publisher.mpc); it requires QuickFAST.
+WARNING: Unable to expand MPC_ROOT.
+WARNING: Unable to expand MPC_ROOT.
+WARNING: Unable to expand BOOST_STATIC_LIB_PREFIX.
+WARNING: Unable to expand BOOST_STATIC_LIB_PREFIX.
+WARNING: Unable to expand BOOST_STATIC_LIB_PREFIX.
+WARNING: Unable to expand BOOST_STATIC_LIB_PREFIX.
+WARNING: Unable to expand BOOST_STATIC_LIB_PREFIX.
+WARNING: Unable to expand BOOST_STATIC_LIB_PREFIX.
+WARNING: Unable to expand MPC_ROOT.
+WARNING: Unable to expand MPC_ROOT.
+WARNING: Unable to expand MPC_ROOT.
+Generation Time: 0s

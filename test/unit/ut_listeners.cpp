@@ -25,19 +25,19 @@ class TradeCbListener : public TradeListener<TypedOrderBook>
 public:
   virtual void on_trade(const TypedOrderBook* order_book,
                         Quantity qty,
-                        Cost cost)
+                        Price price) override
   {
     quantities_.push_back(qty);
-    costs_.push_back(cost);
+    prices_.push_back(price);
   }
 
   void reset()
   {
     quantities_.clear();
-    costs_.clear();
+    prices_.clear();
   }
   std::vector<Quantity> quantities_;
-  std::vector<Cost> costs_;
+  std::vector<Price> prices_;
 };
 
 class OrderCbListener : public OrderListener<OrderPtr>
@@ -391,9 +391,9 @@ BOOST_AUTO_TEST_CASE(TestTradeCallbacks)
   // Add matching order, should result in a trade
   order_book.add(&order1);
   BOOST_CHECK_EQUAL(1, listener.quantities_.size());
-  BOOST_CHECK_EQUAL(1, listener.costs_.size());
+  BOOST_CHECK_EQUAL(1, listener.prices_.size());
   BOOST_CHECK_EQUAL(100, listener.quantities_[0]);
-  BOOST_CHECK_EQUAL(100 * 3250, listener.costs_[0]);
+  BOOST_CHECK_EQUAL(3250, listener.prices_[0]);
   listener.reset();
   // Add invalid order, should be rejected
   order_book.add(&order2);
@@ -415,7 +415,7 @@ BOOST_AUTO_TEST_CASE(TestTradeCallbacks)
   // Add matching order, should be accepted, followed by a fill
   order_book.add(&order4);
   BOOST_CHECK_EQUAL(1, listener.quantities_.size());
-  BOOST_CHECK_EQUAL(1, listener.costs_.size());
+  BOOST_CHECK_EQUAL(1, listener.prices_.size());
   listener.reset();
   // Replace matched order, with too large of a size decrease, replace
   // should be rejected

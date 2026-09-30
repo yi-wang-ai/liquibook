@@ -1,0 +1,477 @@
+Running 157 test cases...
+***** WARNING TEST TestAonsTwoBidTwoAsk is disabled
+
+Test module "LiquibookTest" has passed with:
+  157 test cases out of 157 passed
+  2671 assertions out of 2671 passed
+
+  Test case "TestOrderCallbacks" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestOrderBookCallbacks" has passed with:
+    8 assertions out of 8 passed
+
+  Test case "TestDepthCallbacks" has passed with:
+    4 assertions out of 4 passed
+
+  Test case "TestBboCallbacks" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestTradeCallbacks" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBidsMultimapSortCorrect" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestAsksMultimapSortCorrect" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestAddCompleteBid" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestAddCompleteAsk" has passed with:
+    11 assertions out of 11 passed
+
+  Test case "TestAddMultiMatchBid" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestAddMultiMatchAsk" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestAddPartialMatchBid" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestAddPartialMatchAsk" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestAddMultiPartialMatchBid" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestAddMultiPartialMatchAsk" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestRepeatMatchBid" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestRepeatMatchAsk" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestAddMarketOrderBid" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestAddMarketOrderAsk" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestAddMarketOrderBidMultipleMatch" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestAddMarketOrderAskMultipleMatch" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestMatchMarketOrderBid" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestMatchMarketOrderAsk" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestMatchMultipleMarketOrderBid" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestMatchMultipleMarketOrderAsk" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestCancelBid" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestCancelAskAndMatch" has passed with:
+    21 assertions out of 21 passed
+
+  Test case "TestCancelBidFail" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestCancelAskFail" has passed with:
+    22 assertions out of 22 passed
+
+  Test case "TestCancelBidRestore" has passed with:
+    72 assertions out of 72 passed
+
+  Test case "TestCancelAskRestore" has passed with:
+    70 assertions out of 70 passed
+
+  Test case "TestFillCompleteBidRestoreDepth" has passed with:
+    80 assertions out of 80 passed
+
+  Test case "TestFillCompleteAskRestoreDepth" has passed with:
+    91 assertions out of 91 passed
+
+  Test case "TestReplaceSizeIncrease" has passed with:
+    20 assertions out of 20 passed
+
+  Test case "TestReplaceSizeDecrease" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestReplaceSizeDecreaseCancel" has passed with:
+    43 assertions out of 43 passed
+
+  Test case "TestReplaceSizeDecreaseTooMuch" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestReplaceSizeIncreaseDecrease" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestReplaceBidPriceChange" has passed with:
+    38 assertions out of 38 passed
+
+  Test case "TestReplaceAskPriceChange" has passed with:
+    36 assertions out of 36 passed
+
+  Test case "TestReplaceBidPriceChangeErase" has passed with:
+    47 assertions out of 47 passed
+
+  Test case "TestReplaceAskPriceChangeErase" has passed with:
+    47 assertions out of 47 passed
+
+  Test case "TestBidMultiLevelFillRestore" has passed with:
+    21 assertions out of 21 passed
+
+  Test case "TestAskMultiLevelFillRestore" has passed with:
+    20 assertions out of 20 passed
+
+  Test case "TestReplaceBidMatch" has passed with:
+    37 assertions out of 37 passed
+
+  Test case "TestReplaceAskMatch" has passed with:
+    39 assertions out of 39 passed
+
+  Test case "TestIocBidNoMatch" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestIocBidPartialMatch" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestIocBidFullMatch" has passed with:
+    20 assertions out of 20 passed
+
+  Test case "TestIocBidMultiMatch" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestFokBidNoMatch" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestFokBidPartialMatch" has passed with:
+    20 assertions out of 20 passed
+
+  Test case "TestFokBidFullMatch" has passed with:
+    20 assertions out of 20 passed
+
+  Test case "TestFokBidMultiMatch" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestIocAskNoMatch" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestIocAskPartialMatch" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestIocAskFullMatch" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestIocAskMultiMatch" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestFokAskNoMatch" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestFokAskPartialMatch" has passed with:
+    20 assertions out of 20 passed
+
+  Test case "TestFokAskFullMatch" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestFokAskMultiMatch" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestBboBidsMultimapSortCorrect" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboAsksMultimapSortCorrect" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestBboAddCompleteBid" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboAddCompleteAsk" has passed with:
+    11 assertions out of 11 passed
+
+  Test case "TestBboAddMultiMatchBid" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestBboAddMultiMatchAsk" has passed with:
+    16 assertions out of 16 passed
+
+  Test case "TestBboAddPartialMatchBid" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestBboAddPartialMatchAsk" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestBboAddMultiPartialMatchBid" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestBboAddMultiPartialMatchAsk" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestBboRepeatMatchBid" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestBboRepeatMatchAsk" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestBboAddMarketOrderBid" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboAddMarketOrderAsk" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboAddMarketOrderBidMultipleMatch" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboAddMarketOrderAskMultipleMatch" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboMatchMarketOrderBid" has passed with:
+    11 assertions out of 11 passed
+
+  Test case "TestBboMatchMarketOrderAsk" has passed with:
+    10 assertions out of 10 passed
+
+  Test case "TestBboMatchMultipleMarketOrderBid" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboMatchMultipleMarketOrderAsk" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboCancelBid" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestBboCancelAskAndMatch" has passed with:
+    19 assertions out of 19 passed
+
+  Test case "TestBboCancelBidFail" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestBboCancelAskFail" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestBboCancelBidRestore" has passed with:
+    40 assertions out of 40 passed
+
+  Test case "TestBboCancelAskRestore" has passed with:
+    38 assertions out of 38 passed
+
+  Test case "TestBboFillCompleteBidRestoreDepth" has passed with:
+    40 assertions out of 40 passed
+
+  Test case "TestBboFillCompleteAskRestoreDepth" has passed with:
+    43 assertions out of 43 passed
+
+  Test case "TestBboReplaceSizeDecrease" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestBboReplaceSizeDecreaseCancel" has passed with:
+    28 assertions out of 28 passed
+
+  Test case "TestBboReplaceSizeDecreaseTooMuch" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestBboReplaceSizeIncreaseDecrease" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestBboReplaceBidPriceChange" has passed with:
+    26 assertions out of 26 passed
+
+  Test case "TestBboReplaceAskPriceChange" has passed with:
+    26 assertions out of 26 passed
+
+  Test case "TestStopOrdersOffMarketNoTrade" has passed with:
+    7 assertions out of 7 passed
+
+  Test case "TestStopMarketOrdersOnMarketTradeImmediately" has passed with:
+    5 assertions out of 5 passed
+
+  Test case "TestStopMarketOrdersTradeWhenStopPriceReached" has passed with:
+    10 assertions out of 10 passed
+
+  Test case "TestStopOrdersCancelBeforeTrigger" has passed with:
+    6 assertions out of 6 passed
+
+  Test case "TestRegBidMatchAon" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestRegBidMatchMulti" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestAonBidNoMatch" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestAonBidMatchReg" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestAonBidMatchMulti" has passed with:
+    16 assertions out of 16 passed
+
+  Test case "TestAonBidNoMatchMulti" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestAonBidMatchAon" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestRegAskMatchAon" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestRegAskMatchMulti" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestAonAskNoMatch" has passed with:
+    16 assertions out of 16 passed
+
+  Test case "TestAonAskMatchReg" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestAonAskMatchMulti" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestOneAonBidOneAonAsk" has passed with:
+    7 assertions out of 7 passed
+
+  Test case "TestTwoAonBidOneAonAsk" has passed with:
+    8 assertions out of 8 passed
+
+  Test case "TestOneAonBidTwoAsk" has passed with:
+    9 assertions out of 9 passed
+
+  Test case "TestOneBidTwoAonAsk" has passed with:
+    8 assertions out of 8 passed
+
+  Test case "TestTwoAonBidTwoAonAsk" has passed
+
+  Test case "TestAonAskNoMatchMulti" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestAonAskMatchAon" has passed with:
+    13 assertions out of 13 passed
+
+  Test case "TestReplaceAonBidSmallerMatch" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestReplaceAonBidPriceMatch" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestReplaceBidLargerMatchAon" has passed with:
+    18 assertions out of 18 passed
+
+  Test case "TestNoMktToMktWithoutPreviousTrade" has passed with:
+    3 assertions out of 3 passed
+
+  Test case "TestTradeSetsMarketPrice" has passed with:
+    7 assertions out of 7 passed
+
+  Test case "TestExplicitlySettingMarketPriceAllowsMarketToMarketTrades" has passed with:
+    4 assertions out of 4 passed
+
+  Test case "TestAddBid" has passed with:
+    2 assertions out of 2 passed
+
+  Test case "TestAddBids" has passed with:
+    2 assertions out of 2 passed
+
+  Test case "TestAppendBidLevels" has passed with:
+    4 assertions out of 4 passed
+
+  Test case "TestInsertBidLevels" has passed with:
+    14 assertions out of 14 passed
+
+  Test case "TestInsertBidLevelsPast5" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestInsertBidLevelsTruncate5" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestCloseBid" has passed with:
+    5 assertions out of 5 passed
+
+  Test case "TestCloseEraseBid" has passed with:
+    10 assertions out of 10 passed
+
+  Test case "TestAddCloseAddBid" has passed with:
+    5 assertions out of 5 passed
+
+  Test case "TestAddCloseAddHigherBid" has passed with:
+    5 assertions out of 5 passed
+
+  Test case "TestCloseBidsFreeLevels" has passed with:
+    24 assertions out of 24 passed
+
+  Test case "TestIncreaseBid" has passed with:
+    10 assertions out of 10 passed
+
+  Test case "TestDecreaseBid" has passed with:
+    10 assertions out of 10 passed
+
+  Test case "TestIncreaseDecreaseBid" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestAddAsk" has passed with:
+    2 assertions out of 2 passed
+
+  Test case "TestAddAsks" has passed with:
+    4 assertions out of 4 passed
+
+  Test case "TestAppendAskLevels" has passed with:
+    7 assertions out of 7 passed
+
+  Test case "TestInsertAskLevels" has passed with:
+    10 assertions out of 10 passed
+
+  Test case "TestInsertAskLevelsPast5" has passed with:
+    15 assertions out of 15 passed
+
+  Test case "TestInsertAskLevelsTruncate5" has passed with:
+    17 assertions out of 17 passed
+
+  Test case "TestCloseAsk" has passed with:
+    4 assertions out of 4 passed
+
+  Test case "TestCloseEraseAsk" has passed with:
+    8 assertions out of 8 passed
+
+  Test case "TestAddCloseAddAsk" has passed with:
+    5 assertions out of 5 passed
+
+  Test case "TestAddCloseAddHigherAsk" has passed with:
+    5 assertions out of 5 passed
+
+  Test case "TestCloseAsksFreeLevels" has passed with:
+    21 assertions out of 21 passed
+
+  Test case "TestIncreaseAsk" has passed with:
+    10 assertions out of 10 passed
+
+  Test case "TestDecreaseAsk" has passed with:
+    10 assertions out of 10 passed
+
+  Test case "TestIncreaseDecreaseAsk" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestReplaceBid" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestReplaceAsk" has passed with:
+    12 assertions out of 12 passed
+
+  Test case "TestSharedPointerBuild" has passed with:
+    8 assertions out of 8 passed
+
+  Test case "TestSharedCancelBid" has passed with:
+    8 assertions out of 8 passed
+

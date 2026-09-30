@@ -1,0 +1,69 @@
+make[1]: Entering directory '/tmp/mpc-repaired-ASan/src/simple'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -DLIQUIBOOK_BUILD_DLL -c  -o "simple_order.o" simple_order.cpp
+make[1]: Entering directory '/tmp/mpc-repaired-ASan/src/book'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -c  -o "main.o" main.cpp
+ar rv /tmp/mpc-repaired-ASan/lib/libliquibook_simpled.a simple_order.o
+ar: creating /tmp/mpc-repaired-ASan/lib/libliquibook_simpled.a
+a - simple_order.o
+make[1]: Leaving directory '/tmp/mpc-repaired-ASan/src/simple'
+make[1]: Entering directory '/tmp/mpc-repaired-ASan/examples/mt_order_entry'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -c  -o "mt_order_entry_main.o" mt_order_entry_main.cpp
+make[1]: Entering directory '/tmp/mpc-repaired-ASan/test/latency'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -c  -o "lt_order_book.o" lt_order_book.cpp
+make[1]: Entering directory '/tmp/mpc-repaired-ASan/test/perf'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -c  -o "pt_order_book.o" pt_order_book.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -c  -o "Order.o" Order.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -L"." main.o -ldl  -lpthread -o "/tmp/mpc-repaired-ASan/bin/liquibook"
+make[1]: Leaving directory '/tmp/mpc-repaired-ASan/src/book'
+make[1]: Entering directory '/tmp/mpc-repaired-ASan/test/unit'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_listeners.o" ut_listeners.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -c  -o "Util.o" Util.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -L"." -L"/tmp/mpc-repaired-ASan/lib" pt_order_book.o -l"liquibook_simpled" -ldl  -lpthread -o "/tmp/mpc-repaired-ASan/bin/test/pt_order_book"
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -L"." -L"/tmp/mpc-repaired-ASan/lib" lt_order_book.o -l"liquibook_simpled" -ldl  -lpthread -o "/tmp/mpc-repaired-ASan/bin/test/lt_order_book"
+make[1]: Leaving directory '/tmp/mpc-repaired-ASan/test/perf'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -c  -o "Market.o" Market.cpp
+make[1]: Leaving directory '/tmp/mpc-repaired-ASan/test/latency'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_order_book.o" ut_order_book.cpp
+Util.cpp: In function 'std::string& orderentry::ltrim(std::string&)':
+Util.cpp:108:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  108 |         std::not1(std::ptr_fun<int, int>(std::isspace))));
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from /usr/include/c++/13/string:49,
+                 from /usr/include/c++/13/stdexcept:39,
+                 from /tmp/mpc-repaired-ASan/src/book/types.h:8,
+                 from Util.h:7,
+                 from Util.cpp:4:
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+Util.cpp:108:18: warning: 'constexpr std::unary_negate<_Predicate> std::not1(const _Predicate&) [with _Predicate = pointer_to_unary_function<int, int>]' is deprecated: use 'std::not_fn' instead [-Wdeprecated-declarations]
+  108 |         std::not1(std::ptr_fun<int, int>(std::isspace))));
+      |         ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/stl_function.h:1046:5: note: declared here
+ 1046 |     not1(const _Predicate& __pred)
+      |     ^~~~
+Util.cpp: In function 'std::string& orderentry::rtrim(std::string&)':
+Util.cpp:115:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  115 |         std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+Util.cpp:115:18: warning: 'constexpr std::unary_negate<_Predicate> std::not1(const _Predicate&) [with _Predicate = pointer_to_unary_function<int, int>]' is deprecated: use 'std::not_fn' instead [-Wdeprecated-declarations]
+  115 |         std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+      |         ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/stl_function.h:1046:5: note: declared here
+ 1046 |     not1(const _Predicate& __pred)
+      |     ^~~~
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_immediate_or_cancel.o" ut_immediate_or_cancel.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_main.o" ut_main.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -L"." -L"/tmp/mpc-repaired-ASan/lib" mt_order_entry_main.o Order.o Util.o Market.o -l"liquibook_simpled" -ldl  -lpthread -o "/tmp/mpc-repaired-ASan/bin/mt_order_entry"
+make[1]: Leaving directory '/tmp/mpc-repaired-ASan/examples/mt_order_entry'
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_bbo_order_book.o" ut_bbo_order_book.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_stop_orders.o" ut_stop_orders.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_all_or_none.o" ut_all_or_none.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_market_price.o" ut_market_price.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_depth.o" ut_depth.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -c  -o "ut_order_book_shared_ptr.o" ut_order_book_shared_ptr.cpp
+g++ -fsanitize=address -fno-omit-frame-pointer -fPIC -g -D_REENTRANT -I"/tmp/mpc-repaired-ASan/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -L"." -L"/tmp/mpc-repaired-ASan/lib" -L"/usr/lib/aarch64-linux-gnu" ut_listeners.o ut_order_book.o ut_immediate_or_cancel.o ut_main.o ut_bbo_order_book.o ut_stop_orders.o ut_all_or_none.o ut_market_price.o ut_depth.o ut_order_book_shared_ptr.o -l"liquibook_simpled" -l"boost_unit_test_framework" -ldl  -lpthread -o "/tmp/mpc-repaired-ASan/bin/test/liquibook_unit_test"
+make[1]: Leaving directory '/tmp/mpc-repaired-ASan/test/unit'

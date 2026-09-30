@@ -1,0 +1,18 @@
+make[1]: Entering directory '/tmp/mpc-baseline-Debug/src/simple'
+/mpc/depgen.pl    -fPIC -g -D_REENTRANT -I"/tmp/mpc-baseline-Debug/src" -DLIQUIBOOK_BUILD_DLL -f .depend.Makefile.liquibook_simple simple_order.cpp 2> /dev/null
+make[1]: Leaving directory '/tmp/mpc-baseline-Debug/src/simple'
+make[1]: Entering directory '/tmp/mpc-baseline-Debug/examples/mt_order_entry'
+/mpc/depgen.pl    -fPIC -g -D_REENTRANT -I"/tmp/mpc-baseline-Debug/src" -f .depend.Makefile.mt_order_entry mt_order_entry_main.cpp Order.cpp Util.cpp Market.cpp 2> /dev/null
+make[1]: Leaving directory '/tmp/mpc-baseline-Debug/examples/mt_order_entry'
+make[1]: Entering directory '/tmp/mpc-baseline-Debug/src/book'
+/mpc/depgen.pl    -fPIC -g -D_REENTRANT -f .depend.Makefile.liquibook main.cpp 2> /dev/null
+make[1]: Leaving directory '/tmp/mpc-baseline-Debug/src/book'
+make[1]: Entering directory '/tmp/mpc-baseline-Debug/test/latency'
+/mpc/depgen.pl    -fPIC -g -D_REENTRANT -I"/tmp/mpc-baseline-Debug/src" -f .depend.Makefile.lt_order_book lt_order_book.cpp 2> /dev/null
+make[1]: Leaving directory '/tmp/mpc-baseline-Debug/test/latency'
+make[1]: Entering directory '/tmp/mpc-baseline-Debug/test/perf'
+/mpc/depgen.pl    -fPIC -g -D_REENTRANT -I"/tmp/mpc-baseline-Debug/src" -f .depend.Makefile.pt_order_book pt_order_book.cpp 2> /dev/null
+make[1]: Leaving directory '/tmp/mpc-baseline-Debug/test/perf'
+make[1]: Entering directory '/tmp/mpc-baseline-Debug/test/unit'
+/mpc/depgen.pl    -fPIC -g -D_REENTRANT -I"/tmp/mpc-baseline-Debug/src" -I"/usr/include/1.83.0" -I"/usr/." -DBOOST_TEST_DYN_LINK -f .depend.Makefile.liquibook_unit_test ut_listeners.cpp ut_order_book.cpp ut_immediate_or_cancel.cpp ut_main.cpp ut_bbo_order_book.cpp ut_stop_orders.cpp ut_all_or_none.cpp ut_market_price.cpp ut_depth.cpp ut_order_book_shared_ptr.cpp 2> /dev/null
+make[1]: Leaving directory '/tmp/mpc-baseline-Debug/test/unit'

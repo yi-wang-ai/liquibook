@@ -1,0 +1,52 @@
+[  3%] Building CXX object CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o
+[  7%] Linking CXX static library libliquibook_simple.a
+[  7%] Built target liquibook_simple
+[ 15%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o
+[ 15%] Building CXX object CMakeFiles/lt_order_book.dir/test/latency/lt_order_book.cpp.o
+[ 19%] Building CXX object CMakeFiles/pt_order_book.dir/test/perf/pt_order_book.cpp.o
+[ 23%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/mt_order_entry_main.cpp.o
+[ 26%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Market.cpp.o
+[ 30%] Linking CXX executable lt_order_book
+[ 34%] Linking CXX executable pt_order_book
+[ 34%] Built target lt_order_book
+[ 38%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Order.cpp.o
+[ 38%] Built target pt_order_book
+[ 42%] Building CXX object CMakeFiles/regression_stop_lifecycle.dir/test/regression/stop_lifecycle.cpp.o
+[ 46%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Util.cpp.o
+/workspace/examples/mt_order_entry/Util.cpp: In function 'std::string& orderentry::ltrim(std::string&)':
+/workspace/examples/mt_order_entry/Util.cpp:108:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  108 |         std::not1(std::ptr_fun<int, int>(std::isspace))));
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from /usr/include/c++/13/string:49,
+                 from /usr/include/c++/13/stdexcept:39,
+                 from /workspace/src/book/types.h:8,
+                 from /workspace/examples/mt_order_entry/Util.h:7,
+                 from /workspace/examples/mt_order_entry/Util.cpp:4:
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+/workspace/examples/mt_order_entry/Util.cpp: In function 'std::string& orderentry::rtrim(std::string&)':
+/workspace/examples/mt_order_entry/Util.cpp:115:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  115 |         std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+[ 53%] Linking CXX executable mt_order_entry
+[ 53%] Building CXX object CMakeFiles/regression_trade_price.dir/test/regression/trade_price.cpp.o
+[ 57%] Linking CXX executable regression_stop_lifecycle
+[ 57%] Built target mt_order_entry
+[ 61%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o
+[ 65%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o
+[ 65%] Built target regression_stop_lifecycle
+[ 69%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o
+[ 73%] Linking CXX executable regression_trade_price
+[ 73%] Built target regression_trade_price
+[ 76%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o
+[ 80%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o
+[ 84%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o
+[ 88%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o
+[ 92%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o
+[ 96%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o
+[100%] Linking CXX executable liquibook_unit_test
+[100%] Built target liquibook_unit_test

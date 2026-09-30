@@ -37,6 +37,7 @@ SimpleOrderBook<SIZE>::perform_callback(SimpleCallback& cb)
   book::DepthOrderBook<SimpleOrder*, SIZE>::perform_callback(cb);
   switch(cb.type) {
     case SimpleCallback::cb_order_accept:
+    case SimpleCallback::cb_order_accept_stop:
       cb.order->accept();
       break;
     case SimpleCallback::cb_order_fill: {
@@ -49,6 +50,7 @@ SimpleOrderBook<SIZE>::perform_callback(SimpleCallback& cb)
       break;
     }
     case SimpleCallback::cb_order_cancel:
+    case SimpleCallback::cb_order_cancel_stop:
       cb.order->cancel();
       break;
     case SimpleCallback::cb_order_replace:

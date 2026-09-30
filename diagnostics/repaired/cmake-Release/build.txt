@@ -1,0 +1,62 @@
+Change Dir: '/tmp/lb-cmake-Release'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile -j4 liquibook_unit_test
+/usr/bin/cmake -P /tmp/lb-cmake-Release/CMakeFiles/VerifyGlobs.cmake
+/usr/bin/cmake -S/tmp/lb-baseline -B/tmp/lb-cmake-Release --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/gmake  -f CMakeFiles/Makefile2 liquibook_unit_test
+gmake[1]: Entering directory '/tmp/lb-cmake-Release'
+/usr/bin/cmake -P /tmp/lb-cmake-Release/CMakeFiles/VerifyGlobs.cmake
+/usr/bin/cmake -S/tmp/lb-baseline -B/tmp/lb-cmake-Release --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /tmp/lb-cmake-Release/CMakeFiles 13
+/usr/bin/gmake  -f CMakeFiles/Makefile2 CMakeFiles/liquibook_unit_test.dir/all
+gmake[2]: Entering directory '/tmp/lb-cmake-Release'
+/usr/bin/gmake  -f CMakeFiles/liquibook_simple.dir/build.make CMakeFiles/liquibook_simple.dir/depend
+gmake[3]: Entering directory '/tmp/lb-cmake-Release'
+cd /tmp/lb-cmake-Release && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /tmp/lb-baseline /tmp/lb-baseline /tmp/lb-cmake-Release /tmp/lb-cmake-Release /tmp/lb-cmake-Release/CMakeFiles/liquibook_simple.dir/DependInfo.cmake "--color="
+gmake[3]: Leaving directory '/tmp/lb-cmake-Release'
+/usr/bin/gmake  -f CMakeFiles/liquibook_simple.dir/build.make CMakeFiles/liquibook_simple.dir/build
+gmake[3]: Entering directory '/tmp/lb-cmake-Release'
+[  7%] Building CXX object CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o
+/usr/bin/c++  -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o -MF CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o.d -o CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o -c /tmp/lb-baseline/src/simple/simple_order.cpp
+[ 15%] Linking CXX static library libliquibook_simple.a
+/usr/bin/cmake -P CMakeFiles/liquibook_simple.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/liquibook_simple.dir/link.txt --verbose=1
+/usr/bin/ar qc libliquibook_simple.a CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o
+/usr/bin/ranlib libliquibook_simple.a
+gmake[3]: Leaving directory '/tmp/lb-cmake-Release'
+[ 15%] Built target liquibook_simple
+/usr/bin/gmake  -f CMakeFiles/liquibook_unit_test.dir/build.make CMakeFiles/liquibook_unit_test.dir/depend
+gmake[3]: Entering directory '/tmp/lb-cmake-Release'
+cd /tmp/lb-cmake-Release && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /tmp/lb-baseline /tmp/lb-baseline /tmp/lb-cmake-Release /tmp/lb-cmake-Release /tmp/lb-cmake-Release/CMakeFiles/liquibook_unit_test.dir/DependInfo.cmake "--color="
+gmake[3]: Leaving directory '/tmp/lb-cmake-Release'
+/usr/bin/gmake  -f CMakeFiles/liquibook_unit_test.dir/build.make CMakeFiles/liquibook_unit_test.dir/build
+gmake[3]: Entering directory '/tmp/lb-cmake-Release'
+[ 38%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o
+[ 38%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o
+[ 38%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o
+[ 46%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o -c /tmp/lb-baseline/test/unit/ut_all_or_none.cpp
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o -c /tmp/lb-baseline/test/unit/ut_bbo_order_book.cpp
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o -c /tmp/lb-baseline/test/unit/ut_depth.cpp
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o -c /tmp/lb-baseline/test/unit/ut_immediate_or_cancel.cpp
+[ 53%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o -c /tmp/lb-baseline/test/unit/ut_listeners.cpp
+[ 61%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o -c /tmp/lb-baseline/test/unit/ut_main.cpp
+[ 69%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o -c /tmp/lb-baseline/test/unit/ut_market_price.cpp
+[ 76%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o -c /tmp/lb-baseline/test/unit/ut_order_book.cpp
+[ 84%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o -c /tmp/lb-baseline/test/unit/ut_order_book_shared_ptr.cpp
+[ 92%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o
+/usr/bin/c++ -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB -I/tmp/lb-baseline/src -O3 -DNDEBUG -std=c++11 -MD -MT CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o -MF CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o.d -o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o -c /tmp/lb-baseline/test/unit/ut_stop_orders.cpp
+[100%] Linking CXX executable liquibook_unit_test
+/usr/bin/cmake -E cmake_link_script CMakeFiles/liquibook_unit_test.dir/link.txt --verbose=1
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o -o liquibook_unit_test  libliquibook_simple.a /usr/lib/aarch64-linux-gnu/libboost_unit_test_framework.so.1.83.0 
+gmake[3]: Leaving directory '/tmp/lb-cmake-Release'
+[100%] Built target liquibook_unit_test
+gmake[2]: Leaving directory '/tmp/lb-cmake-Release'
+/usr/bin/cmake -E cmake_progress_start /tmp/lb-cmake-Release/CMakeFiles 0
+gmake[1]: Leaving directory '/tmp/lb-cmake-Release'
+
