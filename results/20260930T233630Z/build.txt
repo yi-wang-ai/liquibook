@@ -1,0 +1,57 @@
+[  4%] Building CXX object CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o
+[  9%] Linking CXX static library libliquibook_simple.a
+[  9%] Built target liquibook_simple
+[ 18%] Building CXX object CMakeFiles/pt_order_book.dir/test/perf/pt_order_book.cpp.o
+[ 27%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/mt_order_entry_main.cpp.o
+[ 27%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o
+[ 27%] Building CXX object CMakeFiles/lt_order_book.dir/test/latency/lt_order_book.cpp.o
+[ 31%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Market.cpp.o
+[ 36%] Linking CXX executable lt_order_book
+[ 40%] Linking CXX executable pt_order_book
+[ 40%] Built target lt_order_book
+[ 45%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o
+[ 45%] Built target pt_order_book
+[ 50%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o
+[ 54%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Order.cpp.o
+[ 59%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Util.cpp.o
+/workspace/examples/mt_order_entry/Util.cpp: In function 'std::string& orderentry::ltrim(std::string&)':
+/workspace/examples/mt_order_entry/Util.cpp:108:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  108 |         std::not1(std::ptr_fun<int, int>(std::isspace))));
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from /usr/include/c++/13/string:49,
+                 from /usr/include/c++/13/stdexcept:39,
+                 from /workspace/src/book/types.h:8,
+                 from /workspace/examples/mt_order_entry/Util.h:7,
+                 from /workspace/examples/mt_order_entry/Util.cpp:4:
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+/workspace/examples/mt_order_entry/Util.cpp: In function 'std::string& orderentry::rtrim(std::string&)':
+/workspace/examples/mt_order_entry/Util.cpp:115:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  115 |         std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+[ 63%] Linking CXX executable mt_order_entry
+[ 63%] Built target mt_order_entry
+[ 68%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o
+[ 72%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o
+/workspace/test/unit/ut_listeners.cpp: In member function 'void liquibook::TestOrderCallbacks::test_method()':
+/workspace/test/unit/ut_listeners.cpp:109:19: error: cannot declare variable 'listener' to be of abstract type 'liquibook::OrderCbListener'
+  109 |   OrderCbListener listener;
+      |                   ^~~~~~~~
+/workspace/test/unit/ut_listeners.cpp:43:7: note:   because the following virtual functions are pure within 'liquibook::OrderCbListener':
+   43 | class OrderCbListener : public OrderListener<OrderPtr>
+      |       ^~~~~~~~~~~~~~~
+In file included from /workspace/src/book/order_book.h:9,
+                 from /workspace/test/unit/depth_check.h:6,
+                 from /workspace/test/unit/ut_utils.h:6,
+                 from /workspace/test/unit/ut_listeners.cpp:8:
+/workspace/src/book/order_listener.h:42:16: note:     'void liquibook::book::OrderListener<OrderPtr>::on_replace(const OrderPtr&, const int64_t&, liquibook::book::Price) [with OrderPtr = liquibook::simple::SimpleOrder*; int64_t = long int; liquibook::book::Price = long unsigned int]'
+   42 |   virtual void on_replace(const OrderPtr& order,
+      |                ^~~~~~~~~~
+gmake[2]: *** [CMakeFiles/liquibook_unit_test.dir/build.make:132: CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:873: CMakeFiles/liquibook_unit_test.dir/all] Error 2
+gmake: *** [Makefile:101: all] Error 2

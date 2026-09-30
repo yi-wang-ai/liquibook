@@ -1,0 +1,5 @@
+[  9%] Built target liquibook_simple
+[ 27%] Built target pt_order_book
+[ 27%] Built target lt_order_book
+[ 50%] Built target mt_order_entry
+[100%] Built target liquibook_unit_test

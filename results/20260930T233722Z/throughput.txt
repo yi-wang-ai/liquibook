@@ -1,0 +1,28 @@
+1 sec performance test of order book
+testing order book with depth
+trying run of 125000 orders - not enough orders
+trying run of 250000 orders - not enough orders
+trying run of 500000 orders - not enough orders
+trying run of 1000000 orders - not enough orders
+trying run of 2000000 orders - not enough orders
+trying run of 4000000 orders - complete!
+Inserted 3151084 orders in 1 seconds, or 3151084 insertions per sec
+Run matched 1599655 orders
+testing order book with bbo
+trying run of 125000 orders - not enough orders
+trying run of 250000 orders - not enough orders
+trying run of 500000 orders - not enough orders
+trying run of 1000000 orders - not enough orders
+trying run of 2000000 orders - not enough orders
+trying run of 4000000 orders - complete!
+Inserted 3365447 orders in 1 seconds, or 3365447 insertions per sec
+Run matched 1708052 orders
+testing order book without depth
+trying run of 125000 orders - not enough orders
+trying run of 250000 orders - not enough orders
+trying run of 500000 orders - not enough orders
+trying run of 1000000 orders - not enough orders
+trying run of 2000000 orders - not enough orders
+trying run of 4000000 orders - complete!
+Inserted 3208052 orders in 1 seconds, or 3208052 insertions per sec
+Run matched 1627503 orders

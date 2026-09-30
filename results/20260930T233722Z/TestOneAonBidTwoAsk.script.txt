@@ -1,0 +1,38 @@
+
+# Run the One AON bid, two AON ask test
+BUY 300 +IBM 1251 AON;
+Create new order book for IBM
+ADDING order:  [#1 BUY 300 IBM $1251 AON Last Event:{Submitted BUY 300 IBM @1251}]
+	Accepted: [#1 BUY 300 IBM $1251 AON Open: 300 Last Event:{Accepted }]
+	Book Change:  IBM
+SELL 100 IBM 1251;
+ADDING order:  [#2 SELL 100 IBM $1251 Last Event:{Submitted SELL 100 IBM @1251}]
+	Accepted: [#2 SELL 100 IBM $1251 Open: 100 Last Event:{Accepted }]
+	Book Change:  IBM
+SELL 200 IBM 1251;
+ADDING order:  [#3 SELL 200 IBM $1251 Last Event:{Submitted SELL 200 IBM @1251}]
+	Accepted: [#3 SELL 200 IBM $1251 Open: 200 Last Event:{Accepted }]
+	Bought: 100 Shares for 1251 [#1 BUY 300 IBM $1251 AON Open: 200 Cost: 1251 Last Event:{Filled 100 for 1251}]
+	Sold: 100 Shares for 1251 [#2 SELL 100 IBM $1251 Cost: 1251 Last Event:{Filled 100 for 1251}]
+	Trade: 100 IBM Cost 1251
+	Bought: 200 Shares for 1251 [#1 BUY 300 IBM $1251 AON Cost: 2502 Last Event:{Filled 200 for 1251}]
+	Sold: 200 Shares for 1251 [#3 SELL 200 IBM $1251 Cost: 1251 Last Event:{Filled 200 for 1251}]
+	Trade: 200 IBM Cost 1251
+	Book Change:  IBM
+#expect execution, but currently the test fails
+D + ALL
+[#1 BUY 300 IBM $1251 AON Cost: 2502
+	{Submitted BUY 300 IBM @1251}
+	{Accepted }
+	{Filled 100 for 1251}
+	{Filled 200 for 1251}]
+[#2 SELL 100 IBM $1251 Cost: 1251
+	{Submitted SELL 100 IBM @1251}
+	{Accepted }
+	{Filled 100 for 1251}]
+[#3 SELL 200 IBM $1251 Cost: 1251
+	{Submitted SELL 200 IBM @1251}
+	{Accepted }
+	{Filled 200 for 1251}]
+Order book for IBM
+# end of command file.

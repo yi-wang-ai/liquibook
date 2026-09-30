@@ -1,0 +1,85 @@
+# Script to test stop orders
+
+# set market price to 56
+buy 100 +ibm mkt;
+Create new order book for IBM
+ADDING order:  [#1 BUY 100 IBM MKT Last Event:{Submitted BUY 100 IBM @MKT}]
+	Accepted: [#1 BUY 100 IBM MKT Open: 100 Last Event:{Accepted }]
+	Book Change:  IBM
+sell 100 ibm 56;
+ADDING order:  [#2 SELL 100 IBM $56 Last Event:{Submitted SELL 100 IBM @56}]
+	Accepted: [#2 SELL 100 IBM $56 Open: 100 Last Event:{Accepted }]
+	Sold: 100 Shares for 56 [#2 SELL 100 IBM $56 Cost: 56 Last Event:{Filled 100 for 56}]
+	Bought: 100 Shares for 56 [#1 BUY 100 IBM MKT Cost: 56 Last Event:{Filled 100 for 56}]
+	Trade: 100 IBM Cost 56
+	Book Change:  IBM
+
+# enter seed orders that won't trade with each other
+buy 100 ibm 53;
+ADDING order:  [#3 BUY 100 IBM $53 Last Event:{Submitted BUY 100 IBM @53}]
+	Accepted: [#3 BUY 100 IBM $53 Open: 100 Last Event:{Accepted }]
+	Book Change:  IBM
+sell 100 ibm 58;
+ADDING order:  [#4 SELL 100 IBM $58 Last Event:{Submitted SELL 100 IBM @58}]
+	Accepted: [#4 SELL 100 IBM $58 Open: 100 Last Event:{Accepted }]
+	Book Change:  IBM
+
+# add stop orders off market
+buy 100 ibm mkt stop 57;
+ADDING order:  [#5 BUY 100 IBM MKT STOP 57 Last Event:{Submitted BUY 100 IBM @MKT}]
+	Accepted: [#5 BUY 100 IBM MKT STOP 57 Open: 100 Last Event:{Accepted }]
+	Book Change:  IBM
+sell 100 ibm mkt stop 54;
+ADDING order:  [#6 SELL 100 IBM MKT STOP 54 Last Event:{Submitted SELL 100 IBM @MKT}]
+	Accepted: [#6 SELL 100 IBM MKT STOP 54 Open: 100 Last Event:{Accepted }]
+	Book Change:  IBM
+
+# use large AOC orders to set a new market price to 57
+# without trading with existing orders
+# This will trigger the buy stop market order (#5)
+# which will match (and trade with) the sell 58 limit order #4
+buy 1000 ibm 57 aon;
+ADDING order:  [#7 BUY 1000 IBM $57 AON Last Event:{Submitted BUY 1000 IBM @57}]
+	Accepted: [#7 BUY 1000 IBM $57 AON Open: 1000 Last Event:{Accepted }]
+	Book Change:  IBM
+sell 1000 ibm 57 aon;
+ADDING order:  [#8 SELL 1000 IBM $57 AON Last Event:{Submitted SELL 1000 IBM @57}]
+	Accepted: [#8 SELL 1000 IBM $57 AON Open: 1000 Last Event:{Accepted }]
+	Sold: 1000 Shares for 57 [#8 SELL 1000 IBM $57 AON Cost: 57 Last Event:{Filled 1000 for 57}]
+	Bought: 1000 Shares for 57 [#7 BUY 1000 IBM $57 AON Cost: 57 Last Event:{Filled 1000 for 57}]
+	Trade: 1000 IBM Cost 57
+	Bought: 100 Shares for 58 [#5 BUY 100 IBM MKT STOP 57 Cost: 58 Last Event:{Filled 100 for 58}]
+	Sold: 100 Shares for 58 [#4 SELL 100 IBM $58 Cost: 58 Last Event:{Filled 100 for 58}]
+	Trade: 100 IBM Cost 58
+	Book Change:  IBM
+
+# do the same thing on the other side to 
+# hit the stop price of 54 for order #6
+sell 1000 ibm 54 aon;
+ADDING order:  [#9 SELL 1000 IBM $54 AON Last Event:{Submitted SELL 1000 IBM @54}]
+	Accepted: [#9 SELL 1000 IBM $54 AON Open: 1000 Last Event:{Accepted }]
+	Book Change:  IBM
+buy 1000 ibm 54 aon;
+ADDING order:  [#10 BUY 1000 IBM $54 AON Last Event:{Submitted BUY 1000 IBM @54}]
+	Accepted: [#10 BUY 1000 IBM $54 AON Open: 1000 Last Event:{Accepted }]
+	Bought: 1000 Shares for 54 [#10 BUY 1000 IBM $54 AON Cost: 54 Last Event:{Filled 1000 for 54}]
+	Sold: 1000 Shares for 54 [#9 SELL 1000 IBM $54 AON Cost: 54 Last Event:{Filled 1000 for 54}]
+	Trade: 1000 IBM Cost 54
+	Sold: 100 Shares for 53 [#6 SELL 100 IBM MKT STOP 54 Cost: 53 Last Event:{Filled 100 for 53}]
+	Bought: 100 Shares for 53 [#3 BUY 100 IBM $53 Cost: 53 Last Event:{Filled 100 for 53}]
+	Trade: 100 IBM Cost 53
+	Book Change:  IBM
+
+# and display the orders, all of which should be filled.
+d ibm
+[#1 BUY 100 IBM MKT Cost: 56 Last Event:{Filled 100 for 56}]
+[#10 BUY 1000 IBM $54 AON Cost: 54 Last Event:{Filled 1000 for 54}]
+[#2 SELL 100 IBM $56 Cost: 56 Last Event:{Filled 100 for 56}]
+[#3 BUY 100 IBM $53 Cost: 53 Last Event:{Filled 100 for 53}]
+[#4 SELL 100 IBM $58 Cost: 58 Last Event:{Filled 100 for 58}]
+[#5 BUY 100 IBM MKT STOP 57 Cost: 58 Last Event:{Filled 100 for 58}]
+[#6 SELL 100 IBM MKT STOP 54 Cost: 53 Last Event:{Filled 100 for 53}]
+[#7 BUY 1000 IBM $57 AON Cost: 57 Last Event:{Filled 1000 for 57}]
+[#8 SELL 1000 IBM $57 AON Cost: 57 Last Event:{Filled 1000 for 57}]
+[#9 SELL 1000 IBM $54 AON Cost: 54 Last Event:{Filled 1000 for 54}]
+quit

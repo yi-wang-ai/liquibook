@@ -1,0 +1,33 @@
+# Copyright (c) 2017 Object Computing, Inc.
+# All rights reserved.
+# See the file license.txt for licensing information.
+BUY 100 !IBM 50;
+Create new depth order book for IBM
+ADDING order:  [#1 BUY 100 IBM $50 Last Event:{Submitted BUY 100 IBM @50}]
+	Accepted: [#1 BUY 100 IBM $50 Open: 100 Last Event:{Accepted }]
+	Depth Change:  IBM Changed Change Id: 1 Published: 0
+	BIDS:
+	Price 50 Count: 1 Quantity: 100 Change id#: 1
+
+	BBO Change:  IBM Changed Change Id: 1 Published: 0
+	Book Change:  IBM
+SELL 100 IBM 50;
+ADDING order:  [#2 SELL 100 IBM $50 Last Event:{Submitted SELL 100 IBM @50}]
+	Accepted: [#2 SELL 100 IBM $50 Open: 100 Last Event:{Accepted }]
+	Sold: 100 Shares for 50 [#2 SELL 100 IBM $50 Cost: 50 Last Event:{Filled 100 for 50}]
+	Bought: 100 Shares for 50 [#1 BUY 100 IBM $50 Cost: 50 Last Event:{Filled 100 for 50}]
+	Trade: 100 IBM Cost 50
+	Depth Change:  IBM Changed Change Id: 2 Published: 1
+	BBO Change:  IBM Changed Change Id: 2 Published: 1
+	Book Change:  IBM
+D + ALL
+[#1 BUY 100 IBM $50 Cost: 50
+	{Submitted BUY 100 IBM @50}
+	{Accepted }
+	{Filled 100 for 50}]
+[#2 SELL 100 IBM $50 Cost: 50
+	{Submitted SELL 100 IBM @50}
+	{Accepted }
+	{Filled 100 for 50}]
+Order book for IBM
+# end of command file.

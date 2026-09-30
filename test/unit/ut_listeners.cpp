@@ -67,8 +67,8 @@ public:
     cancel_rejects_.push_back(order);
   }
   virtual void on_replace(const OrderPtr& order,
-                          const int32_t& , // size_delta
-                          Price )          // new_price)
+                          const int64_t& , // size_delta
+                          Price ) override // new_price
   {
     replaces_.push_back(order);
   }
