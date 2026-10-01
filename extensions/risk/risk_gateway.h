@@ -6,6 +6,8 @@
 #include <chrono>
 #include <cstdint>
 #include <deque>
+#include <functional>
+#include <locale>
 #include <limits>
 #include <memory>
 #include <sstream>
@@ -199,6 +201,7 @@ class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
   uint64_t events_ = 0;
   bool engine_rejected_ = false;
   bool halted_ = false;
+  std::function<void(const char*)> event_hook_;
   // Liquibook catches listener exceptions. Its logger must latch those errors
   // so dispatch can halt instead of reporting a successful risk operation.
   void log_exception(const std::string&, const std::exception&) override {
@@ -229,6 +232,7 @@ class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
   }
   void on_fill(OrderRecord* const& order, OrderRecord* const& other,
                Quantity qty, liquibook::book::Price) override {
+    if (event_hook_) event_hook_("during_fill");
     risk_.fill(order->account, order->buy, qty);
     risk_.fill(other->account, other->buy, qty);
     order->apply_fill(qty);
@@ -236,6 +240,7 @@ class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
     ++events_;
   }
   void on_cancel(OrderRecord* const& order) override {
+    if (event_hook_) event_hook_("during_cancel");
     risk_.release(order->account, order->buy, order->remaining);
     order->remaining = 0;
     order->state = OrderState::Cancelled;
@@ -247,6 +252,7 @@ class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
   }
   void on_replace(OrderRecord* const& order, const int64_t& delta,
                   liquibook::book::Price price) override {
+    if (event_hook_) event_hook_("during_replace");
     order->total = static_cast<Quantity>(static_cast<int64_t>(order->total) + delta);
     order->remaining = order->total - order->filled;
     order->limit = price;
@@ -268,6 +274,44 @@ public:
   const OrderRecord& order(OrderId id) const { return *orders_.at(id); }
   RiskResult validate(const OrderRequest& order, Timestamp now) const {
     return risk_.validate(order, now, orders_.count(order.id) != 0);
+  }
+  void set_event_hook(std::function<void(const char*)> hook) { event_hook_ = std::move(hook); }
+  RiskResult validate_cancel(AccountId account, OrderId id) const {
+    auto it = orders_.find(id);
+    if (it == orders_.end() || it->second->account != account) return {RejectReason::UnknownOrder};
+    if (it->second->state != OrderState::Open) return {RejectReason::OrderNotOpen};
+    return {RejectReason::None};
+  }
+  RiskResult validate_replace(AccountId account, OrderId id, int64_t quantity, int64_t price, Timestamp now) const {
+    auto result = validate_cancel(account,id);
+    if (!result) return result;
+    const auto& old = *orders_.at(id);
+    if (quantity <= 0 || static_cast<Quantity>(quantity) <= old.filled)
+      return {RejectReason::InvalidQuantity};
+    return risk_.validate_replace({id,account,old.buy,quantity,price}, old.remaining,
+                                 static_cast<Quantity>(quantity)-old.filled, now);
+  }
+  std::string canonical_state() const {
+    std::ostringstream out; out.imbue(std::locale::classic());
+    std::vector<AccountId> accounts;
+    for (const auto& entry : risk_.accounts_) accounts.push_back(entry.first);
+    std::sort(accounts.begin(),accounts.end());
+    for (auto id : accounts) {
+      const auto& a = risk_.accounts_.at(id); const auto& s=a.state; const auto& l=a.limits;
+      out << "A " << id << ' ' << l.max_order_qty << ' ' << l.max_order_notional << ' '
+          << l.max_long_position << ' ' << l.max_short_position << ' ' << l.min_price << ' '
+          << l.max_price << ' ' << l.max_orders_per_second << ' ' << s.position << ' '
+          << s.reserved_buy << ' ' << s.reserved_sell << ' ' << s.last_accepted_time << ':';
+      for(auto time:s.admissions)out << time << ',';
+      out << ';';
+    }
+    std::vector<OrderId> ids; for(const auto& entry:orders_)ids.push_back(entry.first);
+    std::sort(ids.begin(),ids.end());
+    for(auto id:ids) {const auto& o=*orders_.at(id);
+      out << "O " << id << ' ' << o.account << ' ' << o.buy << ' ' << o.total << ' '
+          << o.remaining << ' ' << o.filled << ' ' << o.limit << ' ' << static_cast<int>(o.state) << ';';
+    }
+    out << book_snapshot(); return out.str();
   }
   RiskResult submit(const OrderRequest& request, Timestamp now) {
     require_live();

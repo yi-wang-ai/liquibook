@@ -45,3 +45,10 @@ target_link_libraries(risk_tests PRIVATE exchange_risk Boost::unit_test_framewor
 add_test(NAME risk_controls COMMAND risk_tests --report_level=detailed)
 add_executable(risk_benchmark benchmarks/risk_benchmark.cpp)
 target_link_libraries(risk_benchmark PRIVATE exchange_risk)
+
+add_executable(wal_tests test/durability/wal_tests.cpp)
+target_compile_definitions(wal_tests PRIVATE BOOST_TEST_DYN_LINK)
+target_link_libraries(wal_tests PRIVATE exchange_risk Boost::unit_test_framework)
+add_test(NAME wal_recovery COMMAND wal_tests --report_level=detailed)
+add_executable(wal_benchmark benchmarks/wal_benchmark.cpp)
+target_link_libraries(wal_benchmark PRIVATE exchange_risk)

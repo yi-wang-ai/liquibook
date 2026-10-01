@@ -1,0 +1,15 @@
+[  5%] Built target liquibook_simple
+[ 11%] Built target risk_benchmark
+[ 14%] Building CXX object CMakeFiles/wal_benchmark.dir/benchmarks/wal_benchmark.cpp.o
+[ 23%] Built target risk_tests
+[ 23%] Building CXX object CMakeFiles/wal_tests.dir/test/durability/wal_tests.cpp.o
+[ 29%] Built target pt_order_book
+[ 35%] Built target lt_order_book
+[ 50%] Built target mt_order_entry
+[ 55%] Built target regression_stop_lifecycle
+[ 61%] Built target regression_trade_price
+[ 94%] Built target liquibook_unit_test
+[ 97%] Linking CXX executable wal_benchmark
+[ 97%] Built target wal_benchmark
+[100%] Linking CXX executable wal_tests
+[100%] Built target wal_tests

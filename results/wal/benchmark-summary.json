@@ -1,0 +1,34 @@
+{
+  "none": {
+    "throughput": 8815108.39057,
+    "durable_throughput": 0,
+    "submit_p99_ns": 542,
+    "durable_ack_p99_ns": 0,
+    "durable_acks": 0,
+    "recovery_seconds": 0
+  },
+  "buffered": {
+    "throughput": 750609.87052,
+    "durable_throughput": 680704.332942,
+    "submit_p99_ns": 2084,
+    "durable_ack_p99_ns": 7259041,
+    "durable_acks": 5000,
+    "recovery_seconds": 0.003069083
+  },
+  "group100": {
+    "throughput": 170738.05794,
+    "durable_throughput": 170633.660383,
+    "submit_p99_ns": 24208,
+    "durable_ack_p99_ns": 750584,
+    "durable_acks": 5000,
+    "recovery_seconds": 0.003129459
+  },
+  "sync1": {
+    "throughput": 3100.45177005,
+    "durable_throughput": 3100.41339815,
+    "submit_p99_ns": 1246000,
+    "durable_ack_p99_ns": 1246000,
+    "durable_acks": 5000,
+    "recovery_seconds": 0.003137333
+  }
+}
