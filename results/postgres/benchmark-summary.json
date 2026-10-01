@@ -1,0 +1,26 @@
+{
+  "engine": {
+    "requests_s": 863.302520329,
+    "p50_ns": 1125875,
+    "p95_ns": 1558625,
+    "p99_ns": 2956416,
+    "p99_9_ns": 5771292
+  },
+  "postgres": {
+    "requests_s": 922.142891239,
+    "p50_ns": 1023166,
+    "p95_ns": 1506791,
+    "p99_ns": 2846334,
+    "p99_9_ns": 6076917,
+    "audit_events_s": 2819.34758425,
+    "average_batch": 14.4612476371,
+    "max_queue_depth": 54,
+    "max_commit_us": 10872,
+    "drain_ms": 3.657667
+  },
+  "paired_requests_s_change_percent": 1.8759226867526069,
+  "paired_p50_ns_change_percent": 2.9501151617682186,
+  "paired_p95_ns_change_percent": 2.98775554295283,
+  "paired_p99_ns_change_percent": 3.7660437696095173,
+  "paired_p99_9_ns_change_percent": -5.606481017876219
+}

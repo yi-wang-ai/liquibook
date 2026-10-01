@@ -1,0 +1,151 @@
+[  6%] Building CXX object CMakeFiles/risk_tests.dir/test/risk/risk_tests.cpp.o
+[  6%] Building CXX object CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o
+[  6%] Building CXX object CMakeFiles/risk_benchmark.dir/benchmarks/risk_benchmark.cpp.o
+[  6%] Building CXX object CMakeFiles/exchange_durable.dir/extensions/durability/snapshot.cpp.o
+[  7%] Linking CXX static library libliquibook_simple.a
+[  7%] Built target liquibook_simple
+[  9%] Building CXX object CMakeFiles/exchange_durable.dir/extensions/durability/segmented.cpp.o
+[ 10%] Linking CXX executable risk_benchmark
+[ 10%] Built target risk_benchmark
+[ 12%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o
+[ 14%] Building CXX object CMakeFiles/pt_order_book.dir/test/perf/pt_order_book.cpp.o
+[ 15%] Linking CXX executable risk_tests
+[ 17%] Linking CXX static library libexchange_durable.a
+[ 17%] Built target risk_tests
+[ 18%] Building CXX object CMakeFiles/lt_order_book.dir/test/latency/lt_order_book.cpp.o
+[ 18%] Built target exchange_durable
+[ 20%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/mt_order_entry_main.cpp.o
+[ 21%] Linking CXX executable pt_order_book
+[ 21%] Built target pt_order_book
+[ 23%] Building CXX object CMakeFiles/regression_stop_lifecycle.dir/test/regression/stop_lifecycle.cpp.o
+[ 25%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Market.cpp.o
+[ 26%] Linking CXX executable lt_order_book
+[ 26%] Built target lt_order_book
+[ 28%] Building CXX object CMakeFiles/regression_trade_price.dir/test/regression/trade_price.cpp.o
+[ 29%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o
+[ 31%] Linking CXX executable regression_stop_lifecycle
+[ 31%] Built target regression_stop_lifecycle
+[ 32%] Building CXX object CMakeFiles/wal_tests.dir/test/durability/wal_tests.cpp.o
+[ 34%] Linking CXX executable regression_trade_price
+[ 34%] Built target regression_trade_price
+[ 35%] Building CXX object CMakeFiles/wal_benchmark.dir/benchmarks/wal_benchmark.cpp.o
+[ 37%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Order.cpp.o
+[ 39%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Util.cpp.o
+/workspace/examples/mt_order_entry/Util.cpp:108:24: warning: 'ptr_fun<int, int>' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  108 |         std::not1(std::ptr_fun<int, int>(std::isspace))));
+      |                        ^
+/usr/bin/../lib/gcc/aarch64-linux-gnu/13/../../../../include/c++/13/bits/stl_function.h:1124:5: note: 'ptr_fun<int, int>' has been explicitly marked deprecated here
+ 1124 |     _GLIBCXX11_DEPRECATED_SUGGEST("std::function")
+      |     ^
+/usr/bin/../lib/gcc/aarch64-linux-gnu/13/../../../../include/aarch64-linux-gnu/c++/13/bits/c++config.h:106:45: note: expanded from macro '_GLIBCXX11_DEPRECATED_SUGGEST'
+  106 | # define _GLIBCXX11_DEPRECATED_SUGGEST(ALT) _GLIBCXX_DEPRECATED_SUGGEST(ALT)
+      |                                             ^
+/usr/bin/../lib/gcc/aarch64-linux-gnu/13/../../../../include/aarch64-linux-gnu/c++/13/bits/c++config.h:98:19: note: expanded from macro '_GLIBCXX_DEPRECATED_SUGGEST'
+   98 |   __attribute__ ((__deprecated__ ("use '" ALT "' instead")))
+      |                   ^
+/workspace/examples/mt_order_entry/Util.cpp:115:24: warning: 'ptr_fun<int, int>' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  115 |         std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+      |                        ^
+/usr/bin/../lib/gcc/aarch64-linux-gnu/13/../../../../include/c++/13/bits/stl_function.h:1124:5: note: 'ptr_fun<int, int>' has been explicitly marked deprecated here
+ 1124 |     _GLIBCXX11_DEPRECATED_SUGGEST("std::function")
+      |     ^
+/usr/bin/../lib/gcc/aarch64-linux-gnu/13/../../../../include/aarch64-linux-gnu/c++/13/bits/c++config.h:106:45: note: expanded from macro '_GLIBCXX11_DEPRECATED_SUGGEST'
+  106 | # define _GLIBCXX11_DEPRECATED_SUGGEST(ALT) _GLIBCXX_DEPRECATED_SUGGEST(ALT)
+      |                                             ^
+/usr/bin/../lib/gcc/aarch64-linux-gnu/13/../../../../include/aarch64-linux-gnu/c++/13/bits/c++config.h:98:19: note: expanded from macro '_GLIBCXX_DEPRECATED_SUGGEST'
+   98 |   __attribute__ ((__deprecated__ ("use '" ALT "' instead")))
+      |                   ^
+2 warnings generated.
+[ 40%] Linking CXX executable mt_order_entry
+[ 40%] Built target mt_order_entry
+[ 42%] Building CXX object CMakeFiles/snapshot_tests.dir/test/durability/snapshot_tests.cpp.o
+[ 43%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o
+[ 45%] Linking CXX executable wal_benchmark
+[ 45%] Built target wal_benchmark
+[ 46%] Building CXX object CMakeFiles/snapshot_benchmark.dir/benchmarks/snapshot_benchmark.cpp.o
+[ 48%] Linking CXX executable wal_tests
+[ 48%] Built target wal_tests
+[ 50%] Building CXX object CMakeFiles/segmented_tests.dir/test/durability/segmented_tests.cpp.o
+[ 51%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o
+[ 53%] Linking CXX executable snapshot_benchmark
+[ 54%] Linking CXX executable snapshot_tests
+[ 54%] Built target snapshot_benchmark
+[ 56%] Building CXX object CMakeFiles/segmented_benchmark.dir/benchmarks/segmented_benchmark.cpp.o
+[ 56%] Built target snapshot_tests
+[ 57%] Building CXX object CMakeFiles/exchange_fix.dir/extensions/fix/adapter.cpp.o
+[ 59%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o
+[ 60%] Linking CXX executable segmented_tests
+[ 60%] Built target segmented_tests
+[ 62%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o
+[ 64%] Linking CXX executable segmented_benchmark
+/workspace/test/unit/ut_listeners.cpp:46:16: warning: 'on_accept' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   46 |   virtual void on_accept(const OrderPtr& order)
+      |                ^
+/workspace/src/book/order_listener.h:14:16: note: overridden virtual function is here
+   14 |   virtual void on_accept(const OrderPtr& order) = 0;
+      |                ^
+/workspace/test/unit/ut_listeners.cpp:50:16: warning: 'on_reject' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   50 |   virtual void on_reject(const OrderPtr& order, const char* )
+      |                ^
+/workspace/src/book/order_listener.h:20:16: note: overridden virtual function is here
+   20 |   virtual void on_reject(const OrderPtr& order, const char* reason) = 0;
+      |                ^
+/workspace/test/unit/ut_listeners.cpp:54:16: warning: 'on_fill' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   54 |   virtual void on_fill(const OrderPtr& order, 
+      |                ^
+/workspace/src/book/order_listener.h:27:16: note: overridden virtual function is here
+   27 |   virtual void on_fill(const OrderPtr& order, 
+      |                ^
+/workspace/test/unit/ut_listeners.cpp:61:16: warning: 'on_cancel' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   61 |   virtual void on_cancel(const OrderPtr& order)
+      |                ^
+/workspace/src/book/order_listener.h:33:16: note: overridden virtual function is here
+   33 |   virtual void on_cancel(const OrderPtr& order) = 0;
+      |                ^
+/workspace/test/unit/ut_listeners.cpp:65:16: warning: 'on_cancel_reject' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   65 |   virtual void on_cancel_reject(const OrderPtr& order, const char* )
+      |                ^
+/workspace/src/book/order_listener.h:36:16: note: overridden virtual function is here
+   36 |   virtual void on_cancel_reject(const OrderPtr& order, const char* reason) = 0;
+      |                ^
+/workspace/test/unit/ut_listeners.cpp:75:16: warning: 'on_replace_reject' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   75 |   virtual void on_replace_reject(const OrderPtr& order, const char* )
+      |                ^
+/workspace/src/book/order_listener.h:47:16: note: overridden virtual function is here
+   47 |   virtual void on_replace_reject(const OrderPtr& order, const char* reason) = 0;
+      |                ^
+[ 64%] Built target segmented_benchmark
+[ 65%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o
+[ 67%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o
+6 warnings generated.
+[ 68%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o
+[ 70%] Building CXX object CMakeFiles/exchange_fix.dir/extensions/fix/service.cpp.o
+[ 71%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o
+[ 73%] Linking CXX executable liquibook_unit_test
+[ 73%] Built target liquibook_unit_test
+[ 75%] Linking CXX static library libexchange_fix.a
+[ 75%] Built target exchange_fix
+[ 78%] Building CXX object CMakeFiles/fix_tests.dir/test/fix/fix_tests.cpp.o
+[ 81%] Building CXX object CMakeFiles/fix_gateway.dir/examples/fix/gateway.cpp.o
+[ 81%] Building CXX object CMakeFiles/exchange_audit.dir/extensions/audit/audit.cpp.o
+[ 81%] Building CXX object CMakeFiles/fix_benchmark.dir/benchmarks/fix_benchmark.cpp.o
+[ 82%] Linking CXX executable fix_gateway
+[ 84%] Linking CXX static library libexchange_audit.a
+[ 84%] Built target exchange_audit
+[ 85%] Building CXX object CMakeFiles/audit_tests.dir/test/audit/audit_tests.cpp.o
+[ 87%] Linking CXX executable fix_benchmark
+[ 87%] Built target fix_gateway
+[ 89%] Building CXX object CMakeFiles/audit_gateway.dir/examples/audit/gateway.cpp.o
+[ 89%] Built target fix_benchmark
+[ 90%] Building CXX object CMakeFiles/postgres_benchmark.dir/benchmarks/postgres_benchmark.cpp.o
+[ 92%] Linking CXX executable fix_tests
+[ 92%] Built target fix_tests
+[ 93%] Building CXX object CMakeFiles/audit_outage_benchmark.dir/benchmarks/audit_outage_benchmark.cpp.o
+[ 95%] Linking CXX executable audit_gateway
+[ 96%] Linking CXX executable audit_tests
+[ 96%] Built target audit_gateway
+[ 98%] Linking CXX executable postgres_benchmark
+[ 98%] Built target audit_tests
+[ 98%] Built target postgres_benchmark
+[100%] Linking CXX executable audit_outage_benchmark
+[100%] Built target audit_outage_benchmark

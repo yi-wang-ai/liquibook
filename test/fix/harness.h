@@ -49,10 +49,10 @@ struct Network {
  std::unique_ptr<FIX::FileStoreFactory> accept_store,init_store;
  std::unique_ptr<FIX::SocketAcceptor> acceptor;
  std::unique_ptr<FIX::SocketInitiator> initiator;
- explicit Network(fx::Settings settings=fix_settings(),bool deterministic=true):config(std::move(settings)){
+ explicit Network(fx::Settings settings=fix_settings(),bool deterministic=true,fx::Service::Audit audit={}):config(std::move(settings)){
   char name[]="/tmp/liquibook-fix-test-XXXXXX";auto p=mkdtemp(name);if(!p)throw std::runtime_error("mkdtemp");dir=p;
   mkdir((dir+"/accept").c_str(),0700);mkdir((dir+"/client").c_str(),0700);
-  service.reset(new fx::Service(dir,config,[](const fx::Response& r){return fx::send(r);},deterministic?std::function<Timestamp()>([]{return 1000000000ULL;}):std::function<Timestamp()>()));
+  service.reset(new fx::Service(dir,config,[](const fx::Response& r){return fx::send(r);},deterministic?std::function<Timestamp()>([]{return 1000000000ULL;}):std::function<Timestamp()>(),std::move(audit)));
   app.reset(new fx::Application(*service));
   int fd=socket(AF_INET,SOCK_STREAM,0);sockaddr_in addr{};addr.sin_family=AF_INET;addr.sin_addr.s_addr=htonl(INADDR_LOOPBACK);
   if(bind(fd,reinterpret_cast<sockaddr*>(&addr),sizeof(addr)))throw std::runtime_error("bind test port");

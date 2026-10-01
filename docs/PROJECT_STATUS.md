@@ -10,13 +10,14 @@
 | Snapshots and tail recovery | snapshots-verified | [Snapshots](SNAPSHOTS.md) |
 | Direct segmented recovery and safe retention | snapshot-recovery-optimized | [Segmented recovery](SEGMENTED_RECOVERY.md) |
 | FIX 4.4 gateway | quickfix-gateway-verified | [FIX gateway](FIX_GATEWAY.md) |
+| Asynchronous PostgreSQL audit store | postgres-audit-verified | [PostgreSQL audit](POSTGRES_AUDIT.md) |
 
 Each later phase starts from the previous verified endpoint. No matching-engine code has changed since reproduction-verified. Frozen performance measurements belong to their stated workload, compiler, container and tag; they should not be mixed into an implied universal latency claim.
 
-The current complete suite contains the upstream tests, seven independent matching regressions, 30 risk cases, 30 WAL cases, 14 snapshot cases, 27 segmented-recovery cases, and 40 FIX gateway cases. The original 157 registered upstream cases include a documented disabled-body placeholder; see the reproduction evidence rather than interpreting registration count as 157 independent checks.
+The current complete suite contains the upstream tests, seven independent matching regressions, 30 risk cases, 30 WAL cases, 14 snapshot cases, 27 segmented-recovery cases, 40 FIX gateway cases, and 21 PostgreSQL audit cases. The original 157 registered upstream cases include a documented disabled-body placeholder; see the reproduction evidence rather than interpreting registration count as 157 independent checks.
 
 Hardware perf counters were denied by the Docker VM. The risk performance report includes controlled ablations, allocation/lookup/rehash counters and paired timing measurements instead.
 
 The durability contract distinguishes pending application from durable acknowledgment. Recovery compares complete deterministic state, including FIFO, lifecycle history, positions, reservations and rate windows. Tests include real process kills; power-loss behavior has not been simulated.
 
-Current limits: single serialized writer, per-instrument account risk, retained terminal IDs, synchronous snapshots, and no automatic format migration. The segmented API supports safe retention and WAL histories larger than 512 MiB; the original single-file API keeps its documented limits. The FIX adapter supports GTC limit order entry, durable business acknowledgments and session recovery. IOC is explicitly rejected. Adapter metadata reconstruction is currently linear in its journal history; session/application reporting is at least once. PostgreSQL audit persistence remains a future phase.
+Current limits: single serialized matching writer, per-instrument account risk, retained terminal IDs, synchronous snapshots, and no automatic format migration. The segmented API supports safe retention and WAL histories larger than 512 MiB; the original single-file API keeps its documented limits. The FIX adapter supports GTC limit order entry, durable business acknowledgments and session recovery. IOC is explicitly rejected. Adapter metadata reconstruction is currently linear in its journal history; session/application reporting is at least once. PostgreSQL is an asynchronous audit projection with at-least-once, idempotent delivery. Its append-only local spool is capped at 512 MiB and does not yet compact.

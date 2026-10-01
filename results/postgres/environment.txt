@@ -1,0 +1,9 @@
+Container: Ubuntu 24.04, linux/arm64
+Kernel: LinuxKit 6.12.76
+Guest CPUs: 14, Apple arm64
+GCC: 13.3.0
+Clang: 18.1.3
+PostgreSQL/libpq: 16.15
+QuickFIX pkg-config: 1.14.3
+Benchmark storage: Docker Desktop local bind mount and container-local PostgreSQL data
+Benchmark method: five alternating paired Release trials, 5,000 accepted FIX requests after 100 warm-up requests

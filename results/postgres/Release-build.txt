@@ -1,0 +1,208 @@
+[  4%] Building CXX object CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o
+[  6%] Building CXX object CMakeFiles/risk_benchmark.dir/benchmarks/risk_benchmark.cpp.o
+[  6%] Building CXX object CMakeFiles/risk_tests.dir/test/risk/risk_tests.cpp.o
+[  6%] Building CXX object CMakeFiles/exchange_durable.dir/extensions/durability/snapshot.cpp.o
+[  7%] Linking CXX static library libliquibook_simple.a
+[  7%] Built target liquibook_simple
+[  9%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o
+[ 10%] Linking CXX executable risk_benchmark
+[ 10%] Built target risk_benchmark
+[ 12%] Building CXX object CMakeFiles/pt_order_book.dir/test/perf/pt_order_book.cpp.o
+[ 14%] Building CXX object CMakeFiles/exchange_durable.dir/extensions/durability/segmented.cpp.o
+[ 15%] Linking CXX executable pt_order_book
+[ 15%] Built target pt_order_book
+[ 17%] Building CXX object CMakeFiles/lt_order_book.dir/test/latency/lt_order_book.cpp.o
+[ 18%] Linking CXX executable risk_tests
+[ 18%] Built target risk_tests
+[ 20%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/mt_order_entry_main.cpp.o
+[ 21%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Market.cpp.o
+[ 23%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o
+[ 25%] Linking CXX static library libexchange_durable.a
+[ 26%] Linking CXX executable lt_order_book
+[ 26%] Built target exchange_durable
+[ 28%] Building CXX object CMakeFiles/regression_stop_lifecycle.dir/test/regression/stop_lifecycle.cpp.o
+[ 28%] Built target lt_order_book
+[ 29%] Building CXX object CMakeFiles/regression_trade_price.dir/test/regression/trade_price.cpp.o
+[ 31%] Linking CXX executable regression_trade_price
+[ 31%] Built target regression_trade_price
+[ 32%] Building CXX object CMakeFiles/wal_tests.dir/test/durability/wal_tests.cpp.o
+[ 34%] Linking CXX executable regression_stop_lifecycle
+[ 34%] Built target regression_stop_lifecycle
+[ 35%] Building CXX object CMakeFiles/wal_benchmark.dir/benchmarks/wal_benchmark.cpp.o
+[ 37%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Order.cpp.o
+[ 39%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Util.cpp.o
+/workspace/examples/mt_order_entry/Util.cpp: In function 'std::string& orderentry::ltrim(std::string&)':
+/workspace/examples/mt_order_entry/Util.cpp:108:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  108 |         std::not1(std::ptr_fun<int, int>(std::isspace))));
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from /usr/include/c++/13/string:49,
+                 from /usr/include/c++/13/stdexcept:39,
+                 from /workspace/src/book/types.h:8,
+                 from /workspace/examples/mt_order_entry/Util.h:7,
+                 from /workspace/examples/mt_order_entry/Util.cpp:4:
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+/workspace/examples/mt_order_entry/Util.cpp: In function 'std::string& orderentry::rtrim(std::string&)':
+/workspace/examples/mt_order_entry/Util.cpp:115:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  115 |         std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+[ 40%] Linking CXX executable mt_order_entry
+[ 40%] Built target mt_order_entry
+[ 42%] Building CXX object CMakeFiles/snapshot_tests.dir/test/durability/snapshot_tests.cpp.o
+[ 43%] Linking CXX executable wal_benchmark
+[ 43%] Built target wal_benchmark
+[ 45%] Building CXX object CMakeFiles/snapshot_benchmark.dir/benchmarks/snapshot_benchmark.cpp.o
+[ 46%] Linking CXX executable wal_tests
+[ 46%] Built target wal_tests
+[ 48%] Building CXX object CMakeFiles/segmented_tests.dir/test/durability/segmented_tests.cpp.o
+[ 50%] Linking CXX executable snapshot_tests
+[ 51%] Linking CXX executable snapshot_benchmark
+[ 51%] Built target snapshot_tests
+[ 53%] Building CXX object CMakeFiles/segmented_benchmark.dir/benchmarks/segmented_benchmark.cpp.o
+[ 53%] Built target snapshot_benchmark
+[ 54%] Building CXX object CMakeFiles/exchange_fix.dir/extensions/fix/adapter.cpp.o
+[ 56%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o
+[ 57%] Linking CXX executable segmented_benchmark
+[ 57%] Built target segmented_benchmark
+[ 59%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o
+[ 60%] Linking CXX executable segmented_tests
+[ 60%] Built target segmented_tests
+[ 62%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o
+[ 64%] Building CXX object CMakeFiles/exchange_fix.dir/extensions/fix/service.cpp.o
+[ 65%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o
+[ 67%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o
+[ 68%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o
+[ 70%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o
+[ 71%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o
+[ 73%] Linking CXX static library libexchange_fix.a
+[ 73%] Built target exchange_fix
+[ 76%] Building CXX object CMakeFiles/fix_tests.dir/test/fix/fix_tests.cpp.o
+[ 76%] Building CXX object CMakeFiles/exchange_audit.dir/extensions/audit/audit.cpp.o
+[ 78%] Building CXX object CMakeFiles/fix_gateway.dir/examples/fix/gateway.cpp.o
+In file included from /workspace/test/fix/harness.h:2,
+                 from /workspace/test/fix/fix_tests.cpp:3:
+/workspace/test/fix/../../extensions/fix/application.h:14:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   14 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/test/fix/../../extensions/fix/application.h:15:60: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   15 |  void fromAdmin(const FIX::Message&,const FIX::SessionID&) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {}
+      |                                                            ^~~~~
+/workspace/test/fix/../../extensions/fix/application.h:17:2: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   17 |  throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |  ^~~~~
+/workspace/test/fix/harness.h:28:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   28 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/test/fix/harness.h:29:65: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   29 |  void fromAdmin(const FIX::Message& m,const FIX::SessionID& id) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {
+      |                                                                 ^~~~~
+/workspace/test/fix/harness.h:32:63: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   32 |  void fromApp(const FIX::Message& m,const FIX::SessionID& id) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |                                                               ^~~~~
+In file included from /workspace/examples/fix/gateway.cpp:1:
+/workspace/examples/fix/../../extensions/fix/application.h:14:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   14 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/examples/fix/../../extensions/fix/application.h:15:60: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   15 |  void fromAdmin(const FIX::Message&,const FIX::SessionID&) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {}
+      |                                                            ^~~~~
+/workspace/examples/fix/../../extensions/fix/application.h:17:2: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   17 |  throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |  ^~~~~
+[ 79%] Linking CXX static library libexchange_audit.a
+[ 79%] Built target exchange_audit
+[ 81%] Building CXX object CMakeFiles/fix_benchmark.dir/benchmarks/fix_benchmark.cpp.o
+[ 82%] Linking CXX executable fix_gateway
+[ 82%] Built target fix_gateway
+[ 84%] Building CXX object CMakeFiles/audit_tests.dir/test/audit/audit_tests.cpp.o
+In file included from /workspace/benchmarks/../test/fix/harness.h:2,
+                 from /workspace/benchmarks/fix_benchmark.cpp:1:
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:14:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   14 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:15:60: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   15 |  void fromAdmin(const FIX::Message&,const FIX::SessionID&) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {}
+      |                                                            ^~~~~
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:17:2: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   17 |  throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |  ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:28:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   28 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:29:65: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   29 |  void fromAdmin(const FIX::Message& m,const FIX::SessionID& id) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {
+      |                                                                 ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:32:63: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   32 |  void fromApp(const FIX::Message& m,const FIX::SessionID& id) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |                                                               ^~~~~
+[ 85%] Linking CXX executable fix_benchmark
+[ 85%] Built target fix_benchmark
+[ 87%] Building CXX object CMakeFiles/audit_gateway.dir/examples/audit/gateway.cpp.o
+[ 89%] Linking CXX executable audit_tests
+[ 89%] Built target audit_tests
+[ 90%] Building CXX object CMakeFiles/postgres_benchmark.dir/benchmarks/postgres_benchmark.cpp.o
+[ 92%] Linking CXX executable liquibook_unit_test
+[ 92%] Built target liquibook_unit_test
+[ 93%] Building CXX object CMakeFiles/audit_outage_benchmark.dir/benchmarks/audit_outage_benchmark.cpp.o
+In file included from /workspace/examples/audit/gateway.cpp:2:
+/workspace/examples/audit/../../extensions/fix/application.h:14:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   14 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/examples/audit/../../extensions/fix/application.h:15:60: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   15 |  void fromAdmin(const FIX::Message&,const FIX::SessionID&) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {}
+      |                                                            ^~~~~
+/workspace/examples/audit/../../extensions/fix/application.h:17:2: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   17 |  throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |  ^~~~~
+In file included from /workspace/benchmarks/../test/fix/harness.h:2,
+                 from /workspace/benchmarks/postgres_benchmark.cpp:1:
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:14:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   14 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:15:60: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   15 |  void fromAdmin(const FIX::Message&,const FIX::SessionID&) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {}
+      |                                                            ^~~~~
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:17:2: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   17 |  throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |  ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:28:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   28 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:29:65: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   29 |  void fromAdmin(const FIX::Message& m,const FIX::SessionID& id) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {
+      |                                                                 ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:32:63: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   32 |  void fromApp(const FIX::Message& m,const FIX::SessionID& id) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |                                                               ^~~~~
+[ 95%] Linking CXX executable fix_tests
+[ 95%] Built target fix_tests
+In file included from /workspace/benchmarks/../test/fix/harness.h:2,
+                 from /workspace/benchmarks/audit_outage_benchmark.cpp:1:
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:14:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   14 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:15:60: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   15 |  void fromAdmin(const FIX::Message&,const FIX::SessionID&) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {}
+      |                                                            ^~~~~
+/workspace/benchmarks/../test/fix/../../extensions/fix/application.h:17:2: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   17 |  throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |  ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:28:50: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   28 |  void toApp(FIX::Message&,const FIX::SessionID&) throw(FIX::DoNotSend) override {}
+      |                                                  ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:29:65: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   29 |  void fromAdmin(const FIX::Message& m,const FIX::SessionID& id) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::RejectLogon) override {
+      |                                                                 ^~~~~
+/workspace/benchmarks/../test/fix/harness.h:32:63: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+   32 |  void fromApp(const FIX::Message& m,const FIX::SessionID& id) throw(FIX::FieldNotFound,FIX::IncorrectDataFormat,FIX::IncorrectTagValue,FIX::UnsupportedMessageType) override {
+      |                                                               ^~~~~
+[ 96%] Linking CXX executable audit_gateway
+[ 96%] Built target audit_gateway
+[ 98%] Linking CXX executable postgres_benchmark
+[ 98%] Built target postgres_benchmark
+[100%] Linking CXX executable audit_outage_benchmark
+[100%] Built target audit_outage_benchmark

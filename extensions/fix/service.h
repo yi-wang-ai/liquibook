@@ -8,6 +8,9 @@
 #include <thread>
 namespace exchange { namespace fix {
 class Service {
+public:
+ using Audit=std::function<void(const Request&,Timestamp,uint64_t,uint64_t,uint64_t,const std::vector<Response>&)>;
+private:
  struct Pending {uint64_t ordinal;std::vector<Response> responses;std::vector<bool> sent;};
  struct Item {Request request;Timestamp time;uint64_t ordinal;bool delivered=false;};
  Settings settings_;
@@ -19,6 +22,7 @@ class Service {
  std::map<uint64_t,Pending> pending_;
  std::function<bool(const Response&)> send_;
  std::function<Timestamp()> clock_;
+ Audit audit_;
  std::function<void(const char*)> hook_;
  std::mutex mutex_;
  std::condition_variable wake_;
@@ -35,7 +39,8 @@ class Service {
  void fire(const char* stage){if(hook_)hook_(stage);}
 public:
  Service(const std::string& directory,const Settings&,std::function<bool(const Response&)> send,
-         std::function<Timestamp()> clock={});
+         std::function<Timestamp()> clock={},
+         Audit audit={});
  ~Service();
  void enqueue(const Request&); // bounded nonblocking enqueue; worker owns every engine mutation
  void retry_delivery();

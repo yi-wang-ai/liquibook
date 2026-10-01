@@ -40,8 +40,9 @@ std::vector<Service::Item> Service::recover_journal(){
 void Service::remember(uint64_t id,std::vector<Response> responses){
  Pending p;p.ordinal=id;p.responses=std::move(responses);p.sent.resize(p.responses.size(),false);pending_.emplace(id,std::move(p));
 }
-Service::Service(const std::string& dir,const Settings& settings,std::function<bool(const Response&)> send,std::function<Timestamp()> clock)
- :settings_(settings),engine_(dir+"/business",settings.risk,100000,Durability::EveryCommand),adapter_(settings),send_(std::move(send)),clock_(std::move(clock)){
+Service::Service(const std::string& dir,const Settings& settings,std::function<bool(const Response&)> send,std::function<Timestamp()> clock,
+ Service::Audit audit)
+ :settings_(settings),engine_(dir+"/business",settings.risk,100000,Durability::EveryCommand),adapter_(settings),send_(std::move(send)),clock_(std::move(clock)),audit_(std::move(audit)){
  // Caller owns and creates the parent; business WAL holds the exclusive writer lock.
  for(const auto& s:settings_.symbols)if(s.second.decimals>6)throw std::invalid_argument("unsupported tick precision");
  journal_=open((dir+"/adapter.journal").c_str(),O_RDWR|O_CREAT|O_CLOEXEC|O_NOFOLLOW,0600);
@@ -62,7 +63,8 @@ Service::Service(const std::string& dir,const Settings& settings,std::function<b
    result.acknowledged=bool(result.result);return result;
   });
   for(const auto& item:items){
-   auto reports=adapter_.process(item.request,item.time,item.ordinal);ordinal_=item.ordinal;
+   auto before=shadow.sequence();auto reports=adapter_.process(item.request,item.time,item.ordinal);auto after=shadow.sequence();ordinal_=item.ordinal;
+   if(audit_)try{audit_(item.request,item.time,item.ordinal,before,after,reports);}catch(...){}
    if(!item.delivered)remember(item.ordinal,std::move(reports));
   }
   if(shadow.canonical_state()!=engine_.canonical_state())throw std::runtime_error("adapter/business recovery mismatch");
@@ -88,7 +90,9 @@ void Service::request(const Request& q,Timestamp time){
  try{
   if(ordinal_==UINT64_MAX)throw std::runtime_error("adapter ordinal exhausted");
   auto id=ordinal_+1;append(701,id,encode_request(q,time));ordinal_=id;fire("after_adapter_intent");
-  remember(id,adapter_.process(q,time,id));deliver();
+  auto before=engine_.sequence();auto reports=adapter_.process(q,time,id);auto after=engine_.sequence();
+  if(audit_)try{audit_(q,time,id,before,after,reports);}catch(...){}
+  remember(id,std::move(reports));deliver();
  }catch(...){failed_=true;}
 }
 void Service::deliver(){
