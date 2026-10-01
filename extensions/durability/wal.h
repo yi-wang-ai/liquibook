@@ -202,6 +202,9 @@ public:
       return {{RejectReason::None},sequence_,durable_,mode_!=Durability::NoWal && durable_>=sequence_};
     }catch(...){halted_=true;throw;}
   }
+  void set_observer(std::function<void(uint32_t,const OrderEvent&)> observer){
+    for(auto& b:books_){auto symbol=b.first;if(observer)b.second->set_observer([observer,symbol](const OrderEvent& e){observer(symbol,e);});else b.second->set_observer({});}
+  }
   void save_snapshot(const std::string& path);
   uint64_t flush() {
     if(halted_)throw std::runtime_error("exchange halted");

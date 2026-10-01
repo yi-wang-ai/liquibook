@@ -53,3 +53,6 @@ Release
 doc/NotGitWorthy/
 
 /build/
+
+# Local FIX session stores and gateway state
+/run/

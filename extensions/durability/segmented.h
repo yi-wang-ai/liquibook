@@ -50,12 +50,14 @@ public:
  // Retains the newest two valid snapshots and the WAL required by the older one.
  void save_snapshot(bool retire=true);
  void set_hook(std::function<void(const char*,uint64_t)> hook){hook_=std::move(hook);}
+ void set_observer(std::function<void(uint32_t,const OrderEvent&)> observer){engine_->set_observer(std::move(observer));}
  uint64_t sequence()const{return engine_->sequence();}
  uint64_t durable_sequence()const{return durable_;}
  Timestamp now()const{return engine_->now();}
  std::string canonical_state()const{return engine_->canonical_state();}
  uint64_t hash()const{return engine_->hash();}
  const RiskGateway& book(uint32_t id)const{return engine_->book(id);}
+ durable::Bytes stream_identity()const{return identity_;}
  const RecoveryStats& recovery_stats()const{return stats_;}
 };
 } }

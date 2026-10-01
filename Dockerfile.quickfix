@@ -1,0 +1,4 @@
+FROM liquibook-diagnostics:ubuntu24.04
+RUN apt-get update && apt-get install -y --no-install-recommends libquickfix-dev libquickfix-doc && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends pkg-config curl && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /opt/quickfix && curl -fsSL https://raw.githubusercontent.com/quickfix/quickfix/6908dc8c1084eeb7af7f322d35216e9965684489/spec/FIX44.xml -o /opt/quickfix/FIX44.xml

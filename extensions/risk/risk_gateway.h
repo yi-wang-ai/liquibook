@@ -194,6 +194,11 @@ struct OrderRecord : liquibook::book::Order {
   }
 };
 
+enum class OrderEventType { Accepted, Filled, Cancelled, Replaced };
+struct OrderEvent {
+ OrderEventType type; OrderId id; Quantity total,leaves,cumulative; Money price,last_quantity,last_price;
+};
+
 class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
                     private liquibook::book::Logger {
   friend class durable::StateCodec;
@@ -205,6 +210,10 @@ class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
   bool engine_rejected_ = false;
   bool halted_ = false;
   std::function<void(const char*)> event_hook_;
+  std::function<void(const OrderEvent&)> observer_;
+  void observe(OrderEventType type,const OrderRecord& o,Quantity qty=0,Money price=0){
+    if(observer_)observer_({type,o.id,o.total,o.remaining,o.filled,o.limit,qty,price});
+  }
   // Liquibook catches listener exceptions. Its logger must latch those errors
   // so dispatch can halt instead of reporting a successful risk operation.
   void log_exception(const std::string&, const std::exception&) override {
@@ -225,7 +234,7 @@ class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
     }
   }
 
-  void on_accept(OrderRecord* const&) override { ++events_; }
+  void on_accept(OrderRecord* const& order) override { ++events_; observe(OrderEventType::Accepted,*order); }
   void on_reject(OrderRecord* const& order, const char*) override {
     risk_.release(order->account, order->buy, order->remaining);
     order->remaining = 0;
@@ -234,20 +243,21 @@ class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
     ++events_;
   }
   void on_fill(OrderRecord* const& order, OrderRecord* const& other,
-               Quantity qty, liquibook::book::Price) override {
+               Quantity qty, liquibook::book::Price price) override {
     if (event_hook_) event_hook_("during_fill");
     risk_.fill(order->account, order->buy, qty);
     risk_.fill(other->account, other->buy, qty);
     order->apply_fill(qty);
     other->apply_fill(qty);
     ++events_;
+    observe(OrderEventType::Filled,*order,qty,price); observe(OrderEventType::Filled,*other,qty,price);
   }
   void on_cancel(OrderRecord* const& order) override {
     if (event_hook_) event_hook_("during_cancel");
     risk_.release(order->account, order->buy, order->remaining);
     order->remaining = 0;
     order->state = OrderState::Cancelled;
-    ++events_;
+    ++events_; observe(OrderEventType::Cancelled,*order);
   }
   void on_cancel_reject(OrderRecord* const&, const char*) override {
     engine_rejected_ = true;
@@ -259,7 +269,7 @@ class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
     order->total = static_cast<Quantity>(static_cast<int64_t>(order->total) + delta);
     order->remaining = order->total - order->filled;
     order->limit = price;
-    ++events_;
+    ++events_; observe(OrderEventType::Replaced,*order);
   }
   void on_replace_reject(OrderRecord* const&, const char*) override {
     engine_rejected_ = true;
@@ -278,6 +288,7 @@ public:
   RiskResult validate(const OrderRequest& order, Timestamp now) const {
     return risk_.validate(order, now, orders_.count(order.id) != 0);
   }
+  void set_observer(std::function<void(const OrderEvent&)> observer){observer_=std::move(observer);}
   void set_event_hook(std::function<void(const char*)> hook) { event_hook_ = std::move(hook); }
   RiskResult validate_cancel(AccountId account, OrderId id) const {
     auto it = orders_.find(id);

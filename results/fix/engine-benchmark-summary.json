@@ -1,0 +1,58 @@
+{
+  "frozen-bare-crossing": {
+    "throughput_orders_s": 8266646.16098,
+    "p50_ns": 42,
+    "p95_ns": 84,
+    "p99_ns": 667,
+    "p99_9_ns": 1667
+  },
+  "frozen-bare-resting": {
+    "throughput_orders_s": 2790088.07262,
+    "p50_ns": 208,
+    "p95_ns": 583,
+    "p99_ns": 1500,
+    "p99_9_ns": 6667
+  },
+  "frozen-risk-crossing": {
+    "throughput_orders_s": 6898690.69887,
+    "p50_ns": 83,
+    "p95_ns": 125,
+    "p99_ns": 708,
+    "p99_9_ns": 3417
+  },
+  "frozen-risk-resting": {
+    "throughput_orders_s": 3265470.51023,
+    "p50_ns": 209,
+    "p95_ns": 541,
+    "p99_ns": 875,
+    "p99_9_ns": 4375
+  },
+  "current-bare-crossing": {
+    "throughput_orders_s": 9563879.17175,
+    "p50_ns": 42,
+    "p95_ns": 84,
+    "p99_ns": 625,
+    "p99_9_ns": 1000
+  },
+  "current-bare-resting": {
+    "throughput_orders_s": 3519030.11251,
+    "p50_ns": 208,
+    "p95_ns": 542,
+    "p99_ns": 875,
+    "p99_9_ns": 2584
+  },
+  "current-risk-crossing": {
+    "throughput_orders_s": 6201801.95961,
+    "p50_ns": 84,
+    "p95_ns": 167,
+    "p99_ns": 708,
+    "p99_9_ns": 1375
+  },
+  "current-risk-resting": {
+    "throughput_orders_s": 3166761.24832,
+    "p50_ns": 209,
+    "p95_ns": 583,
+    "p99_ns": 875,
+    "p99_9_ns": 3667
+  }
+}

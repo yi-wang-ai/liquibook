@@ -1,0 +1,39 @@
+[  3%] Built target risk_benchmark
+[  7%] Built target liquibook_simple
+[  9%] Building CXX object CMakeFiles/exchange_durable.dir/extensions/durability/segmented.cpp.o
+[ 12%] Built target pt_order_book
+[ 16%] Built target lt_order_book
+[ 20%] Built target risk_tests
+[ 24%] Built target regression_stop_lifecycle
+[ 33%] Built target mt_order_entry
+[ 37%] Built target regression_trade_price
+[ 57%] Built target liquibook_unit_test
+[ 59%] Linking CXX static library libexchange_durable.a
+[ 61%] Built target exchange_durable
+[ 62%] Linking CXX executable wal_benchmark
+[ 64%] Linking CXX executable snapshot_benchmark
+[ 68%] Linking CXX executable snapshot_tests
+[ 68%] Linking CXX executable wal_tests
+[ 70%] Built target wal_benchmark
+[ 72%] Built target snapshot_benchmark
+[ 74%] Built target snapshot_tests
+[ 77%] Building CXX object CMakeFiles/segmented_benchmark.dir/benchmarks/segmented_benchmark.cpp.o
+[ 77%] Built target wal_tests
+[ 79%] Building CXX object CMakeFiles/segmented_tests.dir/test/durability/segmented_tests.cpp.o
+[ 83%] Building CXX object CMakeFiles/exchange_fix.dir/extensions/fix/adapter.cpp.o
+[ 83%] Building CXX object CMakeFiles/exchange_fix.dir/extensions/fix/service.cpp.o
+[ 85%] Linking CXX executable segmented_benchmark
+[ 85%] Built target segmented_benchmark
+[ 87%] Linking CXX executable segmented_tests
+[ 87%] Built target segmented_tests
+[ 88%] Linking CXX static library libexchange_fix.a
+[ 88%] Built target exchange_fix
+[ 92%] Building CXX object CMakeFiles/fix_benchmark.dir/benchmarks/fix_benchmark.cpp.o
+[ 92%] Building CXX object CMakeFiles/fix_gateway.dir/examples/fix/gateway.cpp.o
+[ 94%] Building CXX object CMakeFiles/fix_tests.dir/test/fix/fix_tests.cpp.o
+[ 96%] Linking CXX executable fix_gateway
+[ 98%] Linking CXX executable fix_benchmark
+[ 98%] Built target fix_gateway
+[ 98%] Built target fix_benchmark
+[100%] Linking CXX executable fix_tests
+[100%] Built target fix_tests

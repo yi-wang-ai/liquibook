@@ -1,0 +1,25 @@
+[  3%] Built target liquibook_simple
+[  7%] Built target risk_benchmark
+[ 12%] Built target exchange_durable
+[ 16%] Built target pt_order_book
+[ 24%] Built target risk_tests
+[ 24%] Built target lt_order_book
+[ 27%] Built target regression_trade_price
+[ 31%] Built target regression_stop_lifecycle
+[ 40%] Built target mt_order_entry
+[ 44%] Built target wal_benchmark
+[ 48%] Built target snapshot_benchmark
+[ 51%] Built target wal_tests
+[ 55%] Built target snapshot_tests
+[ 59%] Built target segmented_benchmark
+[ 61%] Building CXX object CMakeFiles/exchange_fix.dir/extensions/fix/service.cpp.o
+[ 64%] Built target segmented_tests
+[ 85%] Built target liquibook_unit_test
+[ 87%] Linking CXX static library libexchange_fix.a
+[ 88%] Built target exchange_fix
+[ 92%] Linking CXX executable fix_gateway
+[ 92%] Linking CXX executable fix_benchmark
+[ 94%] Linking CXX executable fix_tests
+[ 96%] Built target fix_gateway
+[ 98%] Built target fix_benchmark
+[100%] Built target fix_tests

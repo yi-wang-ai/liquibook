@@ -1,0 +1,54 @@
+{
+  "bare-crossing": {
+    "frozen": {
+      "median_orders_s": 8526039.59066,
+      "q1_orders_s": 7067006.05229,
+      "q3_orders_s": 9630599.894605
+    },
+    "current": {
+      "median_orders_s": 9169036.95441,
+      "q1_orders_s": 8633864.53057,
+      "q3_orders_s": 9775975.00316
+    },
+    "change_percent": 7.541571405021186
+  },
+  "risk-crossing": {
+    "frozen": {
+      "median_orders_s": 7164382.27353,
+      "q1_orders_s": 6222377.68513,
+      "q3_orders_s": 7550833.74538
+    },
+    "current": {
+      "median_orders_s": 7430929.4918,
+      "q1_orders_s": 5897754.29896,
+      "q3_orders_s": 7494405.76912
+    },
+    "change_percent": 3.720449413410054
+  },
+  "bare-resting": {
+    "frozen": {
+      "median_orders_s": 3669976.72633,
+      "q1_orders_s": 3223429.91788,
+      "q3_orders_s": 3777770.451065
+    },
+    "current": {
+      "median_orders_s": 3766180.45277,
+      "q1_orders_s": 3277512.486895,
+      "q3_orders_s": 3806784.0898700003
+    },
+    "change_percent": 2.6213715675577065
+  },
+  "risk-resting": {
+    "frozen": {
+      "median_orders_s": 3253028.70879,
+      "q1_orders_s": 2688548.981835,
+      "q3_orders_s": 3362624.95164
+    },
+    "current": {
+      "median_orders_s": 3313084.402,
+      "q1_orders_s": 2358614.635385,
+      "q3_orders_s": 3422623.35021
+    },
+    "change_percent": 1.8461470397640012
+  }
+}
