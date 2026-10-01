@@ -1,0 +1,58 @@
+{
+  "crossing": {
+    "bare": {
+      "throughput_orders_s": 9227316.08517,
+      "p50_ns": 42,
+      "p95_ns": 84,
+      "p99_ns": 666,
+      "p99_9_ns": 1291,
+      "cpu_seconds": 0.108358,
+      "cpu_percent": 99.9984097253,
+      "peak_rss_kib": 170388,
+      "throughput_min": 7835442.60445,
+      "throughput_max": 9600518.39727
+    },
+    "risk": {
+      "throughput_orders_s": 5030842.20701,
+      "p50_ns": 84,
+      "p95_ns": 167,
+      "p99_ns": 709,
+      "p99_9_ns": 1750,
+      "cpu_seconds": 0.198734,
+      "cpu_percent": 99.9974836837,
+      "peak_rss_kib": 213768,
+      "throughput_min": 4319019.31725,
+      "throughput_max": 5180045.429
+    },
+    "throughput_reduction_percent": 45.47881355126122,
+    "p99_overhead_ns": 43
+  },
+  "resting": {
+    "bare": {
+      "throughput_orders_s": 3580550.4585,
+      "p50_ns": 208,
+      "p95_ns": 459,
+      "p99_ns": 792,
+      "p99_9_ns": 1917,
+      "cpu_seconds": 0.274563,
+      "cpu_percent": 99.9936415723,
+      "peak_rss_kib": 264080,
+      "throughput_min": 3250552.59394,
+      "throughput_max": 3699969.47525
+    },
+    "risk": {
+      "throughput_orders_s": 1858396.6741,
+      "p50_ns": 209,
+      "p95_ns": 625,
+      "p99_ns": 917,
+      "p99_9_ns": 4375,
+      "cpu_seconds": 0.533961,
+      "cpu_percent": 99.9658905907,
+      "peak_rss_kib": 307464,
+      "throughput_min": 1759709.21185,
+      "throughput_max": 1985991.80679
+    },
+    "throughput_reduction_percent": 48.09745887847261,
+    "p99_overhead_ns": 125
+  }
+}
