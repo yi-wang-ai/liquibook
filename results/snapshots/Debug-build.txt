@@ -1,0 +1,67 @@
+[  5%] Building CXX object CMakeFiles/risk_tests.dir/test/risk/risk_tests.cpp.o
+[  5%] Building CXX object CMakeFiles/risk_benchmark.dir/benchmarks/risk_benchmark.cpp.o
+[  7%] Building CXX object CMakeFiles/liquibook_simple.dir/src/simple/simple_order.cpp.o
+[ 12%] Built target exchange_durable
+[ 17%] Built target wal_tests
+[ 20%] Building CXX object CMakeFiles/wal_benchmark.dir/benchmarks/wal_benchmark.cpp.o
+[ 22%] Linking CXX static library libliquibook_simple.a
+[ 22%] Built target liquibook_simple
+[ 27%] Built target snapshot_tests
+[ 30%] Building CXX object CMakeFiles/snapshot_benchmark.dir/benchmarks/snapshot_benchmark.cpp.o
+[ 32%] Linking CXX executable risk_benchmark
+[ 32%] Built target risk_benchmark
+[ 35%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_all_or_none.cpp.o
+[ 37%] Linking CXX executable wal_benchmark
+[ 40%] Linking CXX executable snapshot_benchmark
+[ 42%] Linking CXX executable risk_tests
+[ 42%] Built target wal_benchmark
+[ 45%] Building CXX object CMakeFiles/pt_order_book.dir/test/perf/pt_order_book.cpp.o
+[ 45%] Built target snapshot_benchmark
+[ 47%] Building CXX object CMakeFiles/lt_order_book.dir/test/latency/lt_order_book.cpp.o
+[ 47%] Built target risk_tests
+[ 50%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/mt_order_entry_main.cpp.o
+[ 52%] Linking CXX executable pt_order_book
+[ 55%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Market.cpp.o
+[ 57%] Linking CXX executable lt_order_book
+[ 57%] Built target pt_order_book
+[ 60%] Building CXX object CMakeFiles/regression_stop_lifecycle.dir/test/regression/stop_lifecycle.cpp.o
+[ 60%] Built target lt_order_book
+[ 62%] Building CXX object CMakeFiles/regression_trade_price.dir/test/regression/trade_price.cpp.o
+[ 65%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_bbo_order_book.cpp.o
+[ 67%] Linking CXX executable regression_trade_price
+[ 70%] Linking CXX executable regression_stop_lifecycle
+[ 70%] Built target regression_trade_price
+[ 72%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_depth.cpp.o
+[ 72%] Built target regression_stop_lifecycle
+[ 75%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_immediate_or_cancel.cpp.o
+[ 77%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Order.cpp.o
+[ 80%] Building CXX object CMakeFiles/mt_order_entry.dir/examples/mt_order_entry/Util.cpp.o
+/workspace/examples/mt_order_entry/Util.cpp: In function 'std::string& orderentry::ltrim(std::string&)':
+/workspace/examples/mt_order_entry/Util.cpp:108:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  108 |         std::not1(std::ptr_fun<int, int>(std::isspace))));
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from /usr/include/c++/13/string:49,
+                 from /usr/include/c++/13/stdexcept:39,
+                 from /workspace/src/book/types.h:8,
+                 from /workspace/examples/mt_order_entry/Util.h:7,
+                 from /workspace/examples/mt_order_entry/Util.cpp:4:
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+/workspace/examples/mt_order_entry/Util.cpp: In function 'std::string& orderentry::rtrim(std::string&)':
+/workspace/examples/mt_order_entry/Util.cpp:115:41: warning: 'std::pointer_to_unary_function<_Arg, _Result> std::ptr_fun(_Result (*)(_Arg)) [with _Arg = int; _Result = int]' is deprecated: use 'std::function' instead [-Wdeprecated-declarations]
+  115 |         std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+      |                   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/include/c++/13/bits/stl_function.h:1126:5: note: declared here
+ 1126 |     ptr_fun(_Result (*__x)(_Arg))
+      |     ^~~~~~~
+[ 82%] Linking CXX executable mt_order_entry
+[ 82%] Built target mt_order_entry
+[ 85%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_listeners.cpp.o
+[ 87%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_main.cpp.o
+[ 90%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_market_price.cpp.o
+[ 92%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book.cpp.o
+[ 95%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_order_book_shared_ptr.cpp.o
+[ 97%] Building CXX object CMakeFiles/liquibook_unit_test.dir/test/unit/ut_stop_orders.cpp.o
+[100%] Linking CXX executable liquibook_unit_test
+[100%] Built target liquibook_unit_test

@@ -1,0 +1,8 @@
+{
+  "full_replay_ms": 24.847542,
+  "snapshot_tail_ms": 24.501458,
+  "snapshot_create_ms": 32.774375,
+  "wal_bytes": 3588104.0,
+  "snapshot_bytes": 58232.0,
+  "recovery_speedup": 1.014125036967188
+}

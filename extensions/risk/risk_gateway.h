@@ -16,6 +16,7 @@
 #include <unordered_set>
 
 namespace exchange {
+namespace durable { class StateCodec; }
 using Quantity = liquibook::book::Quantity;
 using Money = uint64_t;
 using Position = int64_t;
@@ -68,6 +69,7 @@ struct AccountState {
 // One instance represents one instrument and one serial event stream.
 class PreTradeRiskEngine {
   friend class RiskGateway;
+  friend class durable::StateCodec;
   struct Account {
     RiskLimits limits;
     AccountState state;
@@ -194,6 +196,7 @@ struct OrderRecord : liquibook::book::Order {
 
 class RiskGateway : private liquibook::book::OrderListener<OrderRecord*>,
                     private liquibook::book::Logger {
+  friend class durable::StateCodec;
   using Book = liquibook::book::OrderBook<OrderRecord*>;
   PreTradeRiskEngine risk_;
   std::unordered_map<OrderId, std::unique_ptr<OrderRecord>> orders_;

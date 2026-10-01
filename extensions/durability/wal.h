@@ -112,6 +112,7 @@ class Exchange {
   Timestamp clock_origin_=steady_now();
   Timestamp clock_base_=0;bool halted_=false;
   std::function<void(const char*,uint64_t)> hook_;
+  void restore_snapshot(const std::string&,const Scan&,const Bytes&);
   void fire(const char* stage){if(hook_)hook_(stage,pending_);}
   RiskGateway& gateway(uint32_t symbol) {
     auto it=books_.find(symbol);if(it==books_.end())throw std::invalid_argument("unknown symbol");return *it->second;
@@ -140,7 +141,7 @@ class Exchange {
     else write_all(fd_,bytes.data(),bytes.size());
   }
 public:
-  Exchange(const std::string& path,const Config& config,Durability mode=Durability::EveryCommand,uint32_t group=100)
+  Exchange(const std::string& path,const Config& config,Durability mode=Durability::EveryCommand,uint32_t group=100,const std::string& snapshot="")
       :config_(config),path_(path),mode_(mode),group_(group) {
     if(!group)throw std::invalid_argument("zero group size");
     for(const auto& symbol:config){
@@ -156,12 +157,14 @@ public:
       if(flock(fd_,LOCK_EX|LOCK_NB))io_error("lock WAL");
       Bytes data=read_file(fd_);
       if(data.empty()){
+        if(!snapshot.empty())throw std::runtime_error("snapshot requires existing WAL");
         append(frame(0,0,encode_config(config)));sync_file(fd_);sync_parent(path);
       } else {
         auto parsed=scan(data);
         if(parsed.records.empty()||parsed.records.front().payload!=encode_config(config))throw std::runtime_error("configuration mismatch/truncated header");
+        if(!snapshot.empty())restore_snapshot(snapshot,parsed,data);
         for(size_t i=1;i<parsed.records.size();++i){
-          const auto& record=parsed.records[i];const auto c=decode_command(record.type,record.payload);
+          const auto& record=parsed.records[i];if(record.sequence<=sequence_)continue;const auto c=decode_command(record.type,record.payload);
           if(!validate(c)||!apply(c))throw std::runtime_error("invalid command during replay");
           sequence_=record.sequence;logical_floor_=std::max(logical_floor_,c.time);
         }
@@ -196,6 +199,7 @@ public:
       return {{RejectReason::None},sequence_,durable_,mode_!=Durability::NoWal && durable_>=sequence_};
     }catch(...){halted_=true;throw;}
   }
+  void save_snapshot(const std::string& path);
   uint64_t flush() {
     if(halted_)throw std::runtime_error("exchange halted");
     if(mode_==Durability::NoWal)return 0;
