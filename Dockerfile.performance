@@ -1,0 +1,2 @@
+FROM liquibook-diagnostics:ubuntu24.04
+RUN apt-get update && apt-get install -y --no-install-recommends linux-tools-generic strace && rm -rf /var/lib/apt/lists/*

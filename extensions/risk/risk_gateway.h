@@ -71,7 +71,6 @@ class PreTradeRiskEngine {
     AccountState state;
   };
   std::unordered_map<AccountId, Account> accounts_;
-  std::unordered_set<OrderId> accepted_ids_;
   static constexpr Timestamp window = 1000000000ULL;
 
   RiskResult check(const OrderRequest& order, Timestamp now,
@@ -129,8 +128,8 @@ public:
       throw std::invalid_argument("duplicate account");
   }
   const AccountState& account(AccountId id) const { return accounts_.at(id).state; }
-  RiskResult validate(const OrderRequest& order, Timestamp now) const {
-    if (accepted_ids_.count(order.id)) return {RejectReason::DuplicateOrderId};
+  RiskResult validate(const OrderRequest& order, Timestamp now, bool duplicate) const {
+    if (duplicate) return {RejectReason::DuplicateOrderId};
     return check(order, now, 0, order.quantity > 0 ? static_cast<Quantity>(order.quantity) : 0);
   }
 private:
@@ -140,10 +139,9 @@ private:
   }
   void reserve(const OrderRequest& order, Timestamp now) {
     auto& state = accounts_.at(order.account).state;
-    // Roll back the ID if deque allocation fails. No book call has occurred yet.
-    accepted_ids_.insert(order.id);
-    try { admit(state, now); }
-    catch (...) { accepted_ids_.erase(order.id); throw; }
+    // RiskGateway's retained order map is the authoritative accepted-ID set.
+    // It rolls back the insertion if admission allocation fails.
+    admit(state, now);
     (order.buy ? state.reserved_buy : state.reserved_sell) += order.quantity;
   }
   void reserve_replace(AccountId id, bool buy, Quantity old_qty, Quantity new_qty, Timestamp now) {
@@ -269,11 +267,11 @@ public:
   const AccountState& account(AccountId id) const { return risk_.account(id); }
   const OrderRecord& order(OrderId id) const { return *orders_.at(id); }
   RiskResult validate(const OrderRequest& order, Timestamp now) const {
-    return risk_.validate(order, now);
+    return risk_.validate(order, now, orders_.count(order.id) != 0);
   }
   RiskResult submit(const OrderRequest& request, Timestamp now) {
     require_live();
-    auto result = risk_.validate(request, now);
+    auto result = validate(request, now);
     if (!result) return result;
     std::unique_ptr<OrderRecord> stored(new OrderRecord(request));
     auto* ptr = stored.get();

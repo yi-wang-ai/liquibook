@@ -1,0 +1,13 @@
+[  6%] Built target liquibook_simple
+[ 10%] Building CXX object CMakeFiles/risk_benchmark.dir/benchmarks/risk_benchmark.cpp.o
+[ 16%] Built target pt_order_book
+[ 20%] Building CXX object CMakeFiles/risk_tests.dir/test/risk/risk_tests.cpp.o
+[ 26%] Built target lt_order_book
+[ 43%] Built target mt_order_entry
+[ 50%] Built target regression_stop_lifecycle
+[ 56%] Built target regression_trade_price
+[ 93%] Built target liquibook_unit_test
+[ 96%] Linking CXX executable risk_benchmark
+[ 96%] Built target risk_benchmark
+[100%] Linking CXX executable risk_tests
+[100%] Built target risk_tests
