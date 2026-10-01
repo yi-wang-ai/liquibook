@@ -105,6 +105,9 @@ struct Receipt {
   RiskResult result;uint64_t applied_sequence;uint64_t durable_sequence;bool acknowledged;
 };
 class Exchange {
+  friend class SegmentedExchange;
+  Bytes checkpoint_state() const;
+  void load_checkpoint_state(const Bytes&,uint64_t);
   Config config_;
   std::map<uint32_t,std::unique_ptr<RiskGateway>> books_;
   int fd_=-1;std::string path_;Durability mode_;uint32_t group_;

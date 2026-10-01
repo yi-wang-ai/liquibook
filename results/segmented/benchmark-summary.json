@@ -1,0 +1,86 @@
+[
+  {
+    "commands": 100000,
+    "snapshot_percent": 90,
+    "full": {
+      "snapshot_ms": 4.2e-05,
+      "tail_ms": 65.247708,
+      "total_ms": 65.292417,
+      "bytes_read": 6900184.0,
+      "records_decoded": 100000.0,
+      "snapshot_create_ms": 6.413667
+    },
+    "snapshot": {
+      "snapshot_ms": 0.833209,
+      "tail_ms": 6.030583,
+      "total_ms": 6.847458,
+      "bytes_read": 748404.0,
+      "records_decoded": 10000.0,
+      "snapshot_create_ms": 6.413667
+    },
+    "speedup": 9.535278201049207
+  },
+  {
+    "commands": 1000000,
+    "snapshot_percent": 90,
+    "full": {
+      "snapshot_ms": 0.0,
+      "tail_ms": 500.239126,
+      "total_ms": 500.277625,
+      "bytes_read": 69000688.0,
+      "records_decoded": 1000000.0,
+      "snapshot_create_ms": 8.787083
+    },
+    "snapshot": {
+      "snapshot_ms": 0.722125,
+      "tail_ms": 47.37725,
+      "total_ms": 48.200625,
+      "bytes_read": 6958404.0,
+      "records_decoded": 100000.0,
+      "snapshot_create_ms": 8.787083
+    },
+    "speedup": 10.37906925480738
+  },
+  {
+    "commands": 10000000,
+    "snapshot_percent": 90,
+    "full": {
+      "snapshot_ms": 4.1e-05,
+      "tail_ms": 5319.487711,
+      "total_ms": 5319.557086,
+      "bytes_read": 690005728.0,
+      "records_decoded": 10000000.0,
+      "snapshot_create_ms": 14.884625
+    },
+    "snapshot": {
+      "snapshot_ms": 0.831167,
+      "tail_ms": 516.820959,
+      "total_ms": 517.758167,
+      "bytes_read": 69058908.0,
+      "records_decoded": 1000000.0,
+      "snapshot_create_ms": 14.884625
+    },
+    "speedup": 10.274211832954052
+  },
+  {
+    "commands": 10000000,
+    "snapshot_percent": 99,
+    "full": {
+      "snapshot_ms": 0.0,
+      "tail_ms": 4926.777795,
+      "total_ms": 4926.826252,
+      "bytes_read": 690005728.0,
+      "records_decoded": 10000000.0,
+      "snapshot_create_ms": 15.054792
+    },
+    "snapshot": {
+      "snapshot_ms": 0.758667,
+      "tail_ms": 46.963459,
+      "total_ms": 47.717625,
+      "bytes_read": 6958404.0,
+      "records_decoded": 100000.0,
+      "snapshot_create_ms": 15.054792
+    },
+    "speedup": 103.24961168960107
+  }
+]

@@ -84,6 +84,22 @@ public:
   if(encode(g)!=b)throw std::runtime_error("noncanonical snapshot");
  }
 };
+Bytes Exchange::checkpoint_state() const {
+ Bytes b;put(b,logical_floor_,8);put(b,books_.size(),4);
+ for(const auto& entry:books_){auto state=StateCodec::encode(*entry.second);
+  put(b,entry.first,4);put(b,state.size(),8);b.insert(b.end(),state.begin(),state.end());}
+ return b;
+}
+void Exchange::load_checkpoint_state(const Bytes& b,uint64_t seq){
+ Reader r(b);logical_floor_=r.get(8);auto count=r.get(4);
+ if(count!=books_.size())throw std::runtime_error("checkpoint symbol count");
+ std::set<uint32_t> seen;
+ for(size_t i=0;i<count;++i){auto id=r.get(4);auto state=take(r,r.get(8));
+  if(!books_.count(id)||!seen.insert(id).second)throw std::runtime_error("checkpoint symbol");
+  StateCodec::restore(*books_.at(id),state);}
+ r.end();sequence_=seq;clock_base_=logical_floor_;
+ if(checkpoint_state()!=b)throw std::runtime_error("checkpoint noncanonical");
+}
 void Exchange::save_snapshot(const std::string& path){
  if(mode_==Durability::NoWal)throw std::runtime_error("snapshot requires WAL");
  if(halted_)throw std::runtime_error("exchange halted");

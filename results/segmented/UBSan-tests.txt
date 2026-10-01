@@ -1,0 +1,962 @@
+Internal ctest changing into directory: /workspace/build/segmented-UBSan
+UpdateCTestConfiguration  from :/workspace/build/segmented-UBSan/DartConfiguration.tcl
+Parse Config file:/workspace/build/segmented-UBSan/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/workspace/build/segmented-UBSan/DartConfiguration.tcl
+Parse Config file:/workspace/build/segmented-UBSan/DartConfiguration.tcl
+Test project /workspace/build/segmented-UBSan
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: upstream_unit_tests
+
+1: Test command: /workspace/build/segmented-UBSan/liquibook_unit_test "--report_level=detailed"
+1: Working Directory: /workspace/build/segmented-UBSan
+1: Test timeout computed to be: 1500
+1: Running 157 test cases...
+1: ***** WARNING TEST TestAonsTwoBidTwoAsk is disabled
+1: 
+1: Test module "LiquibookTest" has passed with:
+1:   157 test cases out of 157 passed
+1:   2671 assertions out of 2671 passed
+1: 
+1:   Test case "TestRegBidMatchAon" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestRegBidMatchMulti" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestAonBidNoMatch" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestAonBidMatchReg" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestAonBidMatchMulti" has passed with:
+1:     16 assertions out of 16 passed
+1: 
+1:   Test case "TestAonBidNoMatchMulti" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestAonBidMatchAon" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestRegAskMatchAon" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestRegAskMatchMulti" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestAonAskNoMatch" has passed with:
+1:     16 assertions out of 16 passed
+1: 
+1:   Test case "TestAonAskMatchReg" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestAonAskMatchMulti" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestOneAonBidOneAonAsk" has passed with:
+1:     7 assertions out of 7 passed
+1: 
+1:   Test case "TestTwoAonBidOneAonAsk" has passed with:
+1:     8 assertions out of 8 passed
+1: 
+1:   Test case "TestOneAonBidTwoAsk" has passed with:
+1:     9 assertions out of 9 passed
+1: 
+1:   Test case "TestOneBidTwoAonAsk" has passed with:
+1:     8 assertions out of 8 passed
+1: 
+1:   Test case "TestTwoAonBidTwoAonAsk" has passed
+1: 
+1:   Test case "TestAonAskNoMatchMulti" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestAonAskMatchAon" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestReplaceAonBidSmallerMatch" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestReplaceAonBidPriceMatch" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestReplaceBidLargerMatchAon" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestBboBidsMultimapSortCorrect" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboAsksMultimapSortCorrect" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestBboAddCompleteBid" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboAddCompleteAsk" has passed with:
+1:     11 assertions out of 11 passed
+1: 
+1:   Test case "TestBboAddMultiMatchBid" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestBboAddMultiMatchAsk" has passed with:
+1:     16 assertions out of 16 passed
+1: 
+1:   Test case "TestBboAddPartialMatchBid" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestBboAddPartialMatchAsk" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestBboAddMultiPartialMatchBid" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestBboAddMultiPartialMatchAsk" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestBboRepeatMatchBid" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestBboRepeatMatchAsk" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestBboAddMarketOrderBid" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboAddMarketOrderAsk" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboAddMarketOrderBidMultipleMatch" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboAddMarketOrderAskMultipleMatch" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboMatchMarketOrderBid" has passed with:
+1:     11 assertions out of 11 passed
+1: 
+1:   Test case "TestBboMatchMarketOrderAsk" has passed with:
+1:     10 assertions out of 10 passed
+1: 
+1:   Test case "TestBboMatchMultipleMarketOrderBid" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboMatchMultipleMarketOrderAsk" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboCancelBid" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestBboCancelAskAndMatch" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestBboCancelBidFail" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestBboCancelAskFail" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestBboCancelBidRestore" has passed with:
+1:     40 assertions out of 40 passed
+1: 
+1:   Test case "TestBboCancelAskRestore" has passed with:
+1:     38 assertions out of 38 passed
+1: 
+1:   Test case "TestBboFillCompleteBidRestoreDepth" has passed with:
+1:     40 assertions out of 40 passed
+1: 
+1:   Test case "TestBboFillCompleteAskRestoreDepth" has passed with:
+1:     43 assertions out of 43 passed
+1: 
+1:   Test case "TestBboReplaceSizeDecrease" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestBboReplaceSizeDecreaseCancel" has passed with:
+1:     28 assertions out of 28 passed
+1: 
+1:   Test case "TestBboReplaceSizeDecreaseTooMuch" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestBboReplaceSizeIncreaseDecrease" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestBboReplaceBidPriceChange" has passed with:
+1:     26 assertions out of 26 passed
+1: 
+1:   Test case "TestBboReplaceAskPriceChange" has passed with:
+1:     26 assertions out of 26 passed
+1: 
+1:   Test case "TestAddBid" has passed with:
+1:     2 assertions out of 2 passed
+1: 
+1:   Test case "TestAddBids" has passed with:
+1:     2 assertions out of 2 passed
+1: 
+1:   Test case "TestAppendBidLevels" has passed with:
+1:     4 assertions out of 4 passed
+1: 
+1:   Test case "TestInsertBidLevels" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestInsertBidLevelsPast5" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestInsertBidLevelsTruncate5" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestCloseBid" has passed with:
+1:     5 assertions out of 5 passed
+1: 
+1:   Test case "TestCloseEraseBid" has passed with:
+1:     10 assertions out of 10 passed
+1: 
+1:   Test case "TestAddCloseAddBid" has passed with:
+1:     5 assertions out of 5 passed
+1: 
+1:   Test case "TestAddCloseAddHigherBid" has passed with:
+1:     5 assertions out of 5 passed
+1: 
+1:   Test case "TestCloseBidsFreeLevels" has passed with:
+1:     24 assertions out of 24 passed
+1: 
+1:   Test case "TestIncreaseBid" has passed with:
+1:     10 assertions out of 10 passed
+1: 
+1:   Test case "TestDecreaseBid" has passed with:
+1:     10 assertions out of 10 passed
+1: 
+1:   Test case "TestIncreaseDecreaseBid" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestAddAsk" has passed with:
+1:     2 assertions out of 2 passed
+1: 
+1:   Test case "TestAddAsks" has passed with:
+1:     4 assertions out of 4 passed
+1: 
+1:   Test case "TestAppendAskLevels" has passed with:
+1:     7 assertions out of 7 passed
+1: 
+1:   Test case "TestInsertAskLevels" has passed with:
+1:     10 assertions out of 10 passed
+1: 
+1:   Test case "TestInsertAskLevelsPast5" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestInsertAskLevelsTruncate5" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestCloseAsk" has passed with:
+1:     4 assertions out of 4 passed
+1: 
+1:   Test case "TestCloseEraseAsk" has passed with:
+1:     8 assertions out of 8 passed
+1: 
+1:   Test case "TestAddCloseAddAsk" has passed with:
+1:     5 assertions out of 5 passed
+1: 
+1:   Test case "TestAddCloseAddHigherAsk" has passed with:
+1:     5 assertions out of 5 passed
+1: 
+1:   Test case "TestCloseAsksFreeLevels" has passed with:
+1:     21 assertions out of 21 passed
+1: 
+1:   Test case "TestIncreaseAsk" has passed with:
+1:     10 assertions out of 10 passed
+1: 
+1:   Test case "TestDecreaseAsk" has passed with:
+1:     10 assertions out of 10 passed
+1: 
+1:   Test case "TestIncreaseDecreaseAsk" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestReplaceBid" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestReplaceAsk" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestIocBidNoMatch" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestIocBidPartialMatch" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestIocBidFullMatch" has passed with:
+1:     20 assertions out of 20 passed
+1: 
+1:   Test case "TestIocBidMultiMatch" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestFokBidNoMatch" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestFokBidPartialMatch" has passed with:
+1:     20 assertions out of 20 passed
+1: 
+1:   Test case "TestFokBidFullMatch" has passed with:
+1:     20 assertions out of 20 passed
+1: 
+1:   Test case "TestFokBidMultiMatch" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestIocAskNoMatch" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestIocAskPartialMatch" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestIocAskFullMatch" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestIocAskMultiMatch" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestFokAskNoMatch" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestFokAskPartialMatch" has passed with:
+1:     20 assertions out of 20 passed
+1: 
+1:   Test case "TestFokAskFullMatch" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestFokAskMultiMatch" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestOrderCallbacks" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestOrderBookCallbacks" has passed with:
+1:     8 assertions out of 8 passed
+1: 
+1:   Test case "TestDepthCallbacks" has passed with:
+1:     4 assertions out of 4 passed
+1: 
+1:   Test case "TestBboCallbacks" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestTradeCallbacks" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestNoMktToMktWithoutPreviousTrade" has passed with:
+1:     3 assertions out of 3 passed
+1: 
+1:   Test case "TestTradeSetsMarketPrice" has passed with:
+1:     7 assertions out of 7 passed
+1: 
+1:   Test case "TestExplicitlySettingMarketPriceAllowsMarketToMarketTrades" has passed with:
+1:     4 assertions out of 4 passed
+1: 
+1:   Test case "TestBidsMultimapSortCorrect" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestAsksMultimapSortCorrect" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestAddCompleteBid" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestAddCompleteAsk" has passed with:
+1:     11 assertions out of 11 passed
+1: 
+1:   Test case "TestAddMultiMatchBid" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestAddMultiMatchAsk" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestAddPartialMatchBid" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestAddPartialMatchAsk" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestAddMultiPartialMatchBid" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestAddMultiPartialMatchAsk" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestRepeatMatchBid" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestRepeatMatchAsk" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestAddMarketOrderBid" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestAddMarketOrderAsk" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestAddMarketOrderBidMultipleMatch" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestAddMarketOrderAskMultipleMatch" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestMatchMarketOrderBid" has passed with:
+1:     12 assertions out of 12 passed
+1: 
+1:   Test case "TestMatchMarketOrderAsk" has passed with:
+1:     13 assertions out of 13 passed
+1: 
+1:   Test case "TestMatchMultipleMarketOrderBid" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestMatchMultipleMarketOrderAsk" has passed with:
+1:     14 assertions out of 14 passed
+1: 
+1:   Test case "TestCancelBid" has passed with:
+1:     17 assertions out of 17 passed
+1: 
+1:   Test case "TestCancelAskAndMatch" has passed with:
+1:     21 assertions out of 21 passed
+1: 
+1:   Test case "TestCancelBidFail" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestCancelAskFail" has passed with:
+1:     22 assertions out of 22 passed
+1: 
+1:   Test case "TestCancelBidRestore" has passed with:
+1:     72 assertions out of 72 passed
+1: 
+1:   Test case "TestCancelAskRestore" has passed with:
+1:     70 assertions out of 70 passed
+1: 
+1:   Test case "TestFillCompleteBidRestoreDepth" has passed with:
+1:     80 assertions out of 80 passed
+1: 
+1:   Test case "TestFillCompleteAskRestoreDepth" has passed with:
+1:     91 assertions out of 91 passed
+1: 
+1:   Test case "TestReplaceSizeIncrease" has passed with:
+1:     20 assertions out of 20 passed
+1: 
+1:   Test case "TestReplaceSizeDecrease" has passed with:
+1:     18 assertions out of 18 passed
+1: 
+1:   Test case "TestReplaceSizeDecreaseCancel" has passed with:
+1:     43 assertions out of 43 passed
+1: 
+1:   Test case "TestReplaceSizeDecreaseTooMuch" has passed with:
+1:     19 assertions out of 19 passed
+1: 
+1:   Test case "TestReplaceSizeIncreaseDecrease" has passed with:
+1:     15 assertions out of 15 passed
+1: 
+1:   Test case "TestReplaceBidPriceChange" has passed with:
+1:     38 assertions out of 38 passed
+1: 
+1:   Test case "TestReplaceAskPriceChange" has passed with:
+1:     36 assertions out of 36 passed
+1: 
+1:   Test case "TestReplaceBidPriceChangeErase" has passed with:
+1:     47 assertions out of 47 passed
+1: 
+1:   Test case "TestReplaceAskPriceChangeErase" has passed with:
+1:     47 assertions out of 47 passed
+1: 
+1:   Test case "TestBidMultiLevelFillRestore" has passed with:
+1:     21 assertions out of 21 passed
+1: 
+1:   Test case "TestAskMultiLevelFillRestore" has passed with:
+1:     20 assertions out of 20 passed
+1: 
+1:   Test case "TestReplaceBidMatch" has passed with:
+1:     37 assertions out of 37 passed
+1: 
+1:   Test case "TestReplaceAskMatch" has passed with:
+1:     39 assertions out of 39 passed
+1: 
+1:   Test case "TestSharedPointerBuild" has passed with:
+1:     8 assertions out of 8 passed
+1: 
+1:   Test case "TestSharedCancelBid" has passed with:
+1:     8 assertions out of 8 passed
+1: 
+1:   Test case "TestStopOrdersOffMarketNoTrade" has passed with:
+1:     7 assertions out of 7 passed
+1: 
+1:   Test case "TestStopMarketOrdersOnMarketTradeImmediately" has passed with:
+1:     5 assertions out of 5 passed
+1: 
+1:   Test case "TestStopMarketOrdersTradeWhenStopPriceReached" has passed with:
+1:     10 assertions out of 10 passed
+1: 
+1:   Test case "TestStopOrdersCancelBeforeTrigger" has passed with:
+1:     6 assertions out of 6 passed
+1: 
+ 1/13 Test  #1: upstream_unit_tests ..............   Passed    0.03 sec
+test 2
+      Start  2: upstream_order_entry
+
+2: Test command: /workspace/build/segmented-UBSan/mt_order_entry "/workspace/examples/mt_order_entry/order_entry.script"
+2: Working Directory: /workspace/build/segmented-UBSan
+2: Test timeout computed to be: 10
+2: # Copyright (c) 2017 Object Computing, Inc.
+2: # All rights reserved.
+2: # See the file license.txt for licensing information.
+2: BUY 100 !IBM 50;
+2: Create new depth order book for IBM
+2: ADDING order:  [#1 BUY 100 IBM $50 Last Event:{Submitted BUY 100 IBM @50}]
+2: 	Accepted: [#1 BUY 100 IBM $50 Open: 100 Last Event:{Accepted }]
+2: 	Depth Change:  IBM Changed Change Id: 1 Published: 0
+2: 	BIDS:
+2: 	Price 50 Count: 1 Quantity: 100 Change id#: 1
+2: 
+2: 	BBO Change:  IBM Changed Change Id: 1 Published: 0
+2: 	Book Change:  IBM
+2: SELL 100 IBM 50;
+2: ADDING order:  [#2 SELL 100 IBM $50 Last Event:{Submitted SELL 100 IBM @50}]
+2: 	Accepted: [#2 SELL 100 IBM $50 Open: 100 Last Event:{Accepted }]
+2: 	Sold: 100 Shares for 50 [#2 SELL 100 IBM $50 Cost: 50 Last Event:{Filled 100 for 50}]
+2: 	Bought: 100 Shares for 50 [#1 BUY 100 IBM $50 Cost: 50 Last Event:{Filled 100 for 50}]
+2: 	Trade: 100 IBM Cost 50
+2: 	Depth Change:  IBM Changed Change Id: 2 Published: 1
+2: 	BBO Change:  IBM Changed Change Id: 2 Published: 1
+2: 	Book Change:  IBM
+2: D + ALL
+2: [#1 BUY 100 IBM $50 Cost: 50
+2: 	{Submitted BUY 100 IBM @50}
+2: 	{Accepted }
+2: 	{Filled 100 for 50}]
+2: [#2 SELL 100 IBM $50 Cost: 50
+2: 	{Submitted SELL 100 IBM @50}
+2: 	{Accepted }
+2: 	{Filled 100 for 50}]
+2: Order book for IBM
+2: # end of command file.
+ 2/13 Test  #2: upstream_order_entry .............   Passed    0.00 sec
+test 3
+      Start  3: regression_trade_price
+
+3: Test command: /workspace/build/segmented-UBSan/regression_trade_price
+3: Working Directory: /workspace/build/segmented-UBSan
+3: Test timeout computed to be: 1500
+3: input: sell 100 at 3250; buy 800 at 3250
+3: callback quantity=100, price=3250
+ 3/13 Test  #3: regression_trade_price ...........   Passed    0.00 sec
+test 4
+      Start  4: regression_stop_accept_buy
+
+4: Test command: /workspace/build/segmented-UBSan/regression_stop_lifecycle "accept" "buy"
+4: Working Directory: /workspace/build/segmented-UBSan
+4: Test timeout computed to be: 1500
+4: input: market=55, side=buy, quantity=100, limit=market, stop=56
+4: accepted: matched=0, state=1, stopped=1, filled=0
+ 4/13 Test  #4: regression_stop_accept_buy .......   Passed    0.00 sec
+test 5
+      Start  5: regression_stop_accept_sell
+
+5: Test command: /workspace/build/segmented-UBSan/regression_stop_lifecycle "accept" "sell"
+5: Working Directory: /workspace/build/segmented-UBSan
+5: Test timeout computed to be: 1500
+5: input: market=55, side=sell, quantity=100, limit=market, stop=54
+5: accepted: matched=0, state=1, stopped=1, filled=0
+ 5/13 Test  #5: regression_stop_accept_sell ......   Passed    0.00 sec
+test 6
+      Start  6: regression_stop_cancel_buy
+
+6: Test command: /workspace/build/segmented-UBSan/regression_stop_lifecycle "cancel" "buy"
+6: Working Directory: /workspace/build/segmented-UBSan
+6: Test timeout computed to be: 1500
+6: input: market=55, side=buy, quantity=100, limit=market, stop=56
+6: accepted: matched=0, state=1, stopped=1, filled=0
+6: cancelled: state=3, stopped=0, filled=0
+ 6/13 Test  #6: regression_stop_cancel_buy .......   Passed    0.00 sec
+test 7
+      Start  7: regression_stop_cancel_sell
+
+7: Test command: /workspace/build/segmented-UBSan/regression_stop_lifecycle "cancel" "sell"
+7: Working Directory: /workspace/build/segmented-UBSan
+7: Test timeout computed to be: 1500
+7: input: market=55, side=sell, quantity=100, limit=market, stop=54
+7: accepted: matched=0, state=1, stopped=1, filled=0
+7: cancelled: state=3, stopped=0, filled=0
+ 7/13 Test  #7: regression_stop_cancel_sell ......   Passed    0.00 sec
+test 8
+      Start  8: regression_stop_trigger_buy
+
+8: Test command: /workspace/build/segmented-UBSan/regression_stop_lifecycle "trigger" "buy"
+8: Working Directory: /workspace/build/segmented-UBSan
+8: Test timeout computed to be: 1500
+8: input: market=55, side=buy, quantity=100, limit=market, stop=56
+8: accepted: matched=0, state=1, stopped=1, filled=0
+8: triggered: state=2, filled=100
+ 8/13 Test  #8: regression_stop_trigger_buy ......   Passed    0.00 sec
+test 9
+      Start  9: regression_stop_trigger_sell
+
+9: Test command: /workspace/build/segmented-UBSan/regression_stop_lifecycle "trigger" "sell"
+9: Working Directory: /workspace/build/segmented-UBSan
+9: Test timeout computed to be: 1500
+9: input: market=55, side=sell, quantity=100, limit=market, stop=54
+9: accepted: matched=0, state=1, stopped=1, filled=0
+9: triggered: state=2, filled=100
+ 9/13 Test  #9: regression_stop_trigger_sell .....   Passed    0.00 sec
+test 10
+      Start 10: risk_controls
+
+10: Test command: /workspace/build/segmented-UBSan/risk_tests "--report_level=detailed"
+10: Working Directory: /workspace/build/segmented-UBSan
+10: Test timeout computed to be: 1500
+10: Running 30 test cases...
+10: 
+10: Test module "PreTradeRiskTests" has passed with:
+10:   30 test cases out of 30 passed
+10:   325 assertions out of 325 passed
+10: 
+10:   Test case "valid_order" has passed with:
+10:     3 assertions out of 3 passed
+10: 
+10:   Test case "nonpositive_quantity" has passed with:
+10:     24 assertions out of 24 passed
+10: 
+10:   Test case "nonpositive_price" has passed with:
+10:     24 assertions out of 24 passed
+10: 
+10:   Test case "price_band_boundaries" has passed with:
+10:     26 assertions out of 26 passed
+10: 
+10:   Test case "quantity_limit_boundary" has passed with:
+10:     13 assertions out of 13 passed
+10: 
+10:   Test case "notional_limit_boundary" has passed with:
+10:     13 assertions out of 13 passed
+10: 
+10:   Test case "notional_multiplication_overflow" has passed with:
+10:     3 assertions out of 3 passed
+10: 
+10:   Test case "duplicate_active_id_global" has passed with:
+10:     13 assertions out of 13 passed
+10: 
+10:   Test case "duplicate_terminal_ids" has passed with:
+10:     28 assertions out of 28 passed
+10: 
+10:   Test case "unknown_account" has passed with:
+10:     12 assertions out of 12 passed
+10: 
+10:   Test case "long_position_limit" has passed with:
+10:     2 assertions out of 2 passed
+10: 
+10:   Test case "short_position_limit" has passed with:
+10:     2 assertions out of 2 passed
+10: 
+10:   Test case "multiple_same_account_orders" has passed with:
+10:     15 assertions out of 15 passed
+10: 
+10:   Test case "opposite_exposure_not_netted" has passed with:
+10:     16 assertions out of 16 passed
+10: 
+10:   Test case "sliding_rate_window_boundary" has passed with:
+10:     6 assertions out of 6 passed
+10: 
+10:   Test case "rate_is_per_account" has passed with:
+10:     2 assertions out of 2 passed
+10: 
+10:   Test case "rejection_consumes_neither_id_nor_rate" has passed with:
+10:     2 assertions out of 2 passed
+10: 
+10:   Test case "validation_is_read_only" has passed with:
+10:     10 assertions out of 10 passed
+10: 
+10:   Test case "partial_fill_updates_both_accounts" has passed with:
+10:     8 assertions out of 8 passed
+10: 
+10:   Test case "partial_fill_cancel_releases_remainder" has passed with:
+10:     6 assertions out of 6 passed
+10: 
+10:   Test case "partial_fill_replace_increases_exposure" has passed with:
+10:     9 assertions out of 9 passed
+10: 
+10:   Test case "partial_fill_replace_decreases_exposure" has passed with:
+10:     8 assertions out of 8 passed
+10: 
+10:   Test case "reprice_can_fill_and_release_reservation" has passed with:
+10:     5 assertions out of 5 passed
+10: 
+10:   Test case "rejected_replace_preserves_order_book_and_risk" has passed with:
+10:     10 assertions out of 10 passed
+10: 
+10:   Test case "replace_checks_all_scalar_limits" has passed with:
+10:     10 assertions out of 10 passed
+10: 
+10:   Test case "replace_cannot_remove_already_filled_quantity" has passed with:
+10:     12 assertions out of 12 passed
+10: 
+10:   Test case "replace_counts_rate_but_cancel_remains_available" has passed with:
+10:     11 assertions out of 11 passed
+10: 
+10:   Test case "unknown_foreign_and_closed_order_commands" has passed with:
+10:     12 assertions out of 12 passed
+10: 
+10:   Test case "configuration_and_extreme_position_bounds" has passed with:
+10:     6 assertions out of 6 passed
+10: 
+10:   Test case "backward_timestamp_is_rejected_without_mutation" has passed with:
+10:     14 assertions out of 14 passed
+10: 
+10/13 Test #10: risk_controls ....................   Passed    0.01 sec
+test 11
+      Start 11: wal_recovery
+
+11: Test command: /workspace/build/segmented-UBSan/wal_tests "--report_level=detailed"
+11: Working Directory: /workspace/build/segmented-UBSan
+11: Test timeout computed to be: 1500
+11: Running 30 test cases...
+11: 
+11: Test module "WalRecoveryTests" has passed with:
+11:   30 test cases out of 30 passed
+11:   10159 assertions out of 10159 passed
+11: 
+11:   Test case "empty_log" has passed with:
+11:     4 assertions out of 4 passed
+11: 
+11:   Test case "single_order" has passed with:
+11:     5 assertions out of 5 passed
+11: 
+11:   Test case "multiple_orders" has passed with:
+11:     7 assertions out of 7 passed
+11: 
+11:   Test case "partial_fills" has passed with:
+11:     6 assertions out of 6 passed
+11: 
+11:   Test case "cancel_after_partial_fill" has passed with:
+11:     7 assertions out of 7 passed
+11: 
+11:   Test case "replace_after_partial_fill" has passed with:
+11:     8 assertions out of 8 passed
+11: 
+11:   Test case "replace_triggers_fill" has passed with:
+11:     7 assertions out of 7 passed
+11: 
+11:   Test case "reservation_replay" has passed with:
+11:     8 assertions out of 8 passed
+11: 
+11:   Test case "position_replay" has passed with:
+11:     8 assertions out of 8 passed
+11: 
+11:   Test case "multiple_symbols_global_sequence" has passed with:
+11:     7 assertions out of 7 passed
+11: 
+11:   Test case "terminal_duplicate_id_replay" has passed with:
+11:     8 assertions out of 8 passed
+11: 
+11:   Test case "rate_window_replay" has passed with:
+11:     7 assertions out of 7 passed
+11: 
+11:   Test case "rejected_commands_not_logged" has passed with:
+11:     3 assertions out of 3 passed
+11: 
+11:   Test case "checksum_corruption_fails_closed" has passed with:
+11:     2 assertions out of 2 passed
+11: 
+11:   Test case "truncated_final_payload" has passed with:
+11:     3 assertions out of 3 passed
+11: 
+11:   Test case "truncated_final_header" has passed with:
+11:     3 assertions out of 3 passed
+11: 
+11:   Test case "duplicate_sequence" has passed with:
+11:     2 assertions out of 2 passed
+11: 
+11:   Test case "missing_sequence" has passed with:
+11:     2 assertions out of 2 passed
+11: 
+11:   Test case "unsupported_version" has passed with:
+11:     2 assertions out of 2 passed
+11: 
+11:   Test case "invalid_record_length" has passed with:
+11:     2 assertions out of 2 passed
+11: 
+11:   Test case "configuration_mismatch" has passed with:
+11:     2 assertions out of 2 passed
+11: 
+11:   Test case "large_wal" has passed with:
+11:     10002 assertions out of 10002 passed
+11: 
+11:   Test case "sigkill_at_state_boundaries" has passed with:
+11:     32 assertions out of 32 passed
+11: 
+11:   Test case "group_acknowledgments" has passed with:
+11:     6 assertions out of 6 passed
+11: 
+11:   Test case "buffered_requires_flush" has passed with:
+11:     3 assertions out of 3 passed
+11: 
+11:   Test case "no_wal_never_claims_durable_ack" has passed with:
+11:     4 assertions out of 4 passed
+11: 
+11:   Test case "exclusive_writer" has passed with:
+11:     1 assertion out of 1 passed
+11: 
+11:   Test case "failure_halts_writer_and_never_acknowledges" has passed with:
+11:     3 assertions out of 3 passed
+11: 
+11:   Test case "checksum_known_vector" has passed with:
+11:     1 assertion out of 1 passed
+11: 
+11:   Test case "sigkill_after_many_commands" has passed with:
+11:     4 assertions out of 4 passed
+11: 
+11/13 Test #11: wal_recovery .....................   Passed    0.19 sec
+test 12
+      Start 12: snapshot_recovery
+
+12: Test command: /workspace/build/segmented-UBSan/snapshot_tests "--report_level=detailed"
+12: Working Directory: /workspace/build/segmented-UBSan
+12: Test timeout computed to be: 1500
+12: Running 14 test cases...
+12: 
+12: Test module "SnapshotTests" has passed with:
+12:   14 test cases out of 14 passed
+12:   34 assertions out of 34 passed
+12: 
+12:   Test case "empty_snapshot" has passed with:
+12:     1 assertion out of 1 passed
+12: 
+12:   Test case "full_state_and_tail" has passed with:
+12:     2 assertions out of 2 passed
+12: 
+12:   Test case "fifo_after_restore" has passed with:
+12:     2 assertions out of 2 passed
+12: 
+12:   Test case "terminal_ids_preserved" has passed with:
+12:     1 assertion out of 1 passed
+12: 
+12:   Test case "rate_history_preserved" has passed with:
+12:     2 assertions out of 2 passed
+12: 
+12:   Test case "snapshot_checksum_corruption" has passed with:
+12:     2 assertions out of 2 passed
+12: 
+12:   Test case "truncated_snapshot" has passed with:
+12:     2 assertions out of 2 passed
+12: 
+12:   Test case "different_wal_prefix" has passed with:
+12:     1 assertion out of 1 passed
+12: 
+12:   Test case "snapshot_ahead_of_wal" has passed with:
+12:     1 assertion out of 1 passed
+12: 
+12:   Test case "orphan_temporary_ignored" has passed with:
+12:     1 assertion out of 1 passed
+12: 
+12:   Test case "sigkill_snapshot_publication" has passed with:
+12:     12 assertions out of 12 passed
+12: 
+12:   Test case "wal_alias_rejected" has passed with:
+12:     5 assertions out of 5 passed
+12: 
+12:   Test case "partial_wal_tail_with_snapshot" has passed with:
+12:     1 assertion out of 1 passed
+12: 
+12:   Test case "no_wal_snapshot_rejected" has passed with:
+12:     1 assertion out of 1 passed
+12: 
+12/13 Test #12: snapshot_recovery ................   Passed    0.04 sec
+test 13
+      Start 13: segmented_recovery
+
+13: Test command: /workspace/build/segmented-UBSan/segmented_tests "--report_level=detailed"
+13: Working Directory: /workspace/build/segmented-UBSan
+13: Test timeout computed to be: 1500
+13: Running 27 test cases...
+13: 
+13: Test module "SegmentedRecoveryTests" has passed with:
+13:   27 test cases out of 27 passed
+13:   583 assertions out of 583 passed
+13: 
+13:   Test case "boundary_snapshot" has passed with:
+13:     15 assertions out of 15 passed
+13: 
+13:   Test case "middle_snapshot" has passed with:
+13:     15 assertions out of 15 passed
+13: 
+13:   Test case "empty_tail_boundary" has passed with:
+13:     12 assertions out of 12 passed
+13: 
+13:   Test case "empty_tail_middle" has passed with:
+13:     10 assertions out of 10 passed
+13: 
+13:   Test case "several_tail_segments" has passed with:
+13:     27 assertions out of 27 passed
+13: 
+13:   Test case "empty_snapshot" has passed with:
+13:     4 assertions out of 4 passed
+13: 
+13:   Test case "no_snapshot_full_replay" has passed with:
+13:     15 assertions out of 15 passed
+13: 
+13:   Test case "retention_preserves_fallback" has passed with:
+13:     28 assertions out of 28 passed
+13: 
+13:   Test case "single_corrupt_snapshot_falls_back_to_full" has passed with:
+13:     21 assertions out of 21 passed
+13: 
+13:   Test case "all_snapshots_corrupt_after_retention_fail_closed" has passed with:
+13:     23 assertions out of 23 passed
+13: 
+13:   Test case "truncated_first_tail_record" has passed with:
+13:     10 assertions out of 10 passed
+13: 
+13:   Test case "truncated_first_record_at_boundary" has passed with:
+13:     12 assertions out of 12 passed
+13: 
+13:   Test case "corrupt_tail_fails_without_fallback" has passed with:
+13:     19 assertions out of 19 passed
+13: 
+13:   Test case "missing_tail_segment" has passed with:
+13:     25 assertions out of 25 passed
+13: 
+13:   Test case "truncated_sealed_segment" has passed with:
+13:     25 assertions out of 25 passed
+13: 
+13:   Test case "corrupt_prefix_is_not_read" has passed with:
+13:     21 assertions out of 21 passed
+13: 
+13:   Test case "config_and_capacity_mismatch" has passed with:
+13:     2 assertions out of 2 passed
+13: 
+13:   Test case "exclusive_directory_writer" has passed with:
+13:     1 assertion out of 1 passed
+13: 
+13:   Test case "group_ack_across_rotation" has passed with:
+13:     8 assertions out of 8 passed
+13: 
+13:   Test case "rejected_order_does_not_log" has passed with:
+13:     3 assertions out of 3 passed
+13: 
+13:   Test case "lifecycle_fifo_and_multisymbol" has passed with:
+13:     9 assertions out of 9 passed
+13: 
+13:   Test case "snapshot_and_retention_sigkill" has passed with:
+13:     160 assertions out of 160 passed
+13: 
+13:   Test case "rotation_and_append_sigkill" has passed with:
+13:     54 assertions out of 54 passed
+13: 
+13:   Test case "three_generations_retire_old_snapshot" has passed with:
+13:     31 assertions out of 31 passed
+13: 
+13:   Test case "missing_all_segments_fails_closed" has passed with:
+13:     4 assertions out of 4 passed
+13: 
+13:   Test case "recovery_counters_exclude_later_snapshot_saves" has passed with:
+13:     10 assertions out of 10 passed
+13: 
+13:   Test case "recovered_logical_clock_advances" has passed with:
+13:     19 assertions out of 19 passed
+13: 
+13/13 Test #13: segmented_recovery ...............   Passed    0.32 sec
+
+100% tests passed, 0 tests failed out of 13
+
+Total Test time (real) =   0.60 sec

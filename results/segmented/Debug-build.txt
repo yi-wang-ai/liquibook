@@ -1,0 +1,26 @@
+[  4%] Built target liquibook_simple
+[  8%] Built target risk_benchmark
+[ 11%] Building CXX object CMakeFiles/exchange_durable.dir/extensions/durability/segmented.cpp.o
+[ 15%] Built target pt_order_book
+[ 20%] Built target risk_tests
+[ 24%] Built target lt_order_book
+[ 31%] Built target regression_stop_lifecycle
+[ 40%] Built target mt_order_entry
+[ 44%] Built target regression_trade_price
+[ 68%] Built target liquibook_unit_test
+[ 71%] Linking CXX static library libexchange_durable.a
+[ 73%] Built target exchange_durable
+[ 77%] Linking CXX executable snapshot_benchmark
+[ 77%] Linking CXX executable wal_benchmark
+[ 82%] Linking CXX executable wal_tests
+[ 82%] Linking CXX executable snapshot_tests
+[ 84%] Built target wal_benchmark
+[ 86%] Built target snapshot_benchmark
+[ 88%] Built target snapshot_tests
+[ 91%] Built target wal_tests
+[ 93%] Building CXX object CMakeFiles/segmented_benchmark.dir/benchmarks/segmented_benchmark.cpp.o
+[ 95%] Building CXX object CMakeFiles/segmented_tests.dir/test/durability/segmented_tests.cpp.o
+[ 97%] Linking CXX executable segmented_benchmark
+[ 97%] Built target segmented_benchmark
+[100%] Linking CXX executable segmented_tests
+[100%] Built target segmented_tests
