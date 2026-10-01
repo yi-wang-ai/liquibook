@@ -8,7 +8,7 @@ from pathlib import Path
 root = Path(__file__).resolve().parents[1]
 binary = root / 'build/risk-Release/risk_benchmark'
 out = root / 'results/risk-controls'
-count = 200000
+count = 1000000
 seed = 20261001
 repeats = 7
 
